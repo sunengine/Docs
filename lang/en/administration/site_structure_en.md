@@ -1,9 +1,9 @@
-Site structure
+## Site structure
 
 Most site pages belong to one of the following categories.
 
 
-Material Page
+### Material Page
 
 Material pages are:
 
@@ -14,7 +14,7 @@ Forum thread
 Article
 
 
-Category Page
+### Category Page
 
 Category pages are:
 
@@ -25,7 +25,7 @@ Forum sections
 List of Articles
 
 
-Component Page
+### Component Page
 
 Component pages are:
 
@@ -36,7 +36,7 @@ Activities - Output in the form of links of new materials and comments from diff
 Custom page - a page with its own personal logic and code. (can be made by developers, according to individual requirements)
 
 
-Categories
+### Categories
 
 A category is a container for child elements, which can be:
 
@@ -45,7 +45,7 @@ Child categories
 Materials
 
 
-Category page display method
+### Category page display method
 
 Selected in the category template, at the moment the possible options are:
 
@@ -64,14 +64,14 @@ Articles with subsections in level 1
 Articles with subsections in 2 levels
 
 
-Materials
+### Materials
 
 They look and work the same way for all kinds of categories (blog, forum, articles).
 
 In newer versions, a separate display and behavior will be available for materials of various types of categories.
 
 
-Comments
+### Comments
 
 Comments relate to material; there can be many comments to one material.
 
