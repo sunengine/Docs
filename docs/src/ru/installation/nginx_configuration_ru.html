@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Запуск на Nginx | SunEngineDOCs</title>
+    <meta name="description" content="">
+    <meta name="generator" content="VuePress 1.3.1">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.742392f4.css" as="style"><link rel="preload" href="/assets/js/app.49497762.js" as="script"><link rel="preload" href="/assets/js/2.fc39bb15.js" as="script"><link rel="preload" href="/assets/js/26.cfa48c1e.js" as="script"><link rel="prefetch" href="/assets/js/10.6fd6a7db.js"><link rel="prefetch" href="/assets/js/11.fcb8061b.js"><link rel="prefetch" href="/assets/js/12.d590a986.js"><link rel="prefetch" href="/assets/js/13.4a72f376.js"><link rel="prefetch" href="/assets/js/14.47105791.js"><link rel="prefetch" href="/assets/js/15.5f09fa49.js"><link rel="prefetch" href="/assets/js/16.db978e2c.js"><link rel="prefetch" href="/assets/js/17.5d2f2645.js"><link rel="prefetch" href="/assets/js/18.a9c74e09.js"><link rel="prefetch" href="/assets/js/19.f248d436.js"><link rel="prefetch" href="/assets/js/20.f6f2b041.js"><link rel="prefetch" href="/assets/js/21.47ea419f.js"><link rel="prefetch" href="/assets/js/22.32e35b1d.js"><link rel="prefetch" href="/assets/js/23.fce60d56.js"><link rel="prefetch" href="/assets/js/24.8d4f1772.js"><link rel="prefetch" href="/assets/js/25.caef90b4.js"><link rel="prefetch" href="/assets/js/27.5037c5fd.js"><link rel="prefetch" href="/assets/js/28.f0580df5.js"><link rel="prefetch" href="/assets/js/29.95988520.js"><link rel="prefetch" href="/assets/js/3.cf67dc4c.js"><link rel="prefetch" href="/assets/js/4.c4eb0f8f.js"><link rel="prefetch" href="/assets/js/5.3e18b7b2.js"><link rel="prefetch" href="/assets/js/6.014813c9.js"><link rel="prefetch" href="/assets/js/7.ef1f370d.js"><link rel="prefetch" href="/assets/js/8.bd362282.js"><link rel="prefetch" href="/assets/js/9.2c8ee18f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.742392f4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">SunEngineDOCs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/src/en/" class="nav-link">
+  en_US
+</a></div><div class="nav-item"><a href="/src/ru/" class="nav-link router-link-active">
+  ru_RU
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/src/en/" class="nav-link">
+  en_US
+</a></div><div class="nav-item"><a href="/src/ru/" class="nav-link router-link-active">
+  ru_RU
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Russian</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/src/ru/" class="sidebar-link">Русский</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>English</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/src/en/" class="sidebar-link">English</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="запуск-на-nginx"><a href="#запуск-на-nginx" class="header-anchor">#</a> Запуск на Nginx</h2> <p>Серверная и клиентская части запускаются на разных конечных точках, например клиентская часть &quot;mysite.site&quot;, серверная часть &quot;mysite.site/api&quot;.</p> <h3 id="https"><a href="#https" class="header-anchor">#</a> HTTPS</h3> <p>server {
+listen 443 http2;      # https port
+listen [::]:443 http2; # IP v6</p> <div class="language- extra-class"><pre><code>   server_name mysite.site; # домен
+
+   charset utf-8;
+
+   ssl on;  # включаем ssl
+   ssl_certificate /etc/ssl/mysite.site/mysite.site.crt;        # Путь к ssl сертификату
+   ssl_certificate_key /etc/ssl/mysite.site/mysite.site.key;    # Путь к ключу сертификата gzip on; # включаем gzip архивацию потока данных
+
+   gzip_buffers 16 8k;
+   gzip_comp_level 6;
+   gzip_http_version 1.1;
+   gzip_min_length 256;
+   gzip_proxied any;
+   gzip_vary on;
+   gzip_types text/xml application/atom+xml application/rss+xml application/xhtml+xml text/javascript application/javascript
+   application/x-javascript text/x-json application/json application/x-web-app-manifest+json text/css text/plain
+   text/html font/opentype application/x-font-ttf image/x-icon image/svg+xml;
+   gzip_disable &quot;msie6&quot;;
+
+   add_header X-Frame-Options &quot;SAMEORIGIN&quot;;
+   add_header X-XSS-Protection &quot;1; mode=block&quot;;
+   add_header X-Content-Type-Options &quot;nosniff&quot;;
+
+   location / {    # Endpoint для клиентской части
+          root /site/mysite.site/wwwroot;
+          try_files $uri $uri/ /index.html;   # если файл не найден - возвращаем index.html
+
+          open_file_cache max=1000 inactive=20s; # кеширование файлов клиента на сервере
+          open_file_cache_valid 30s;
+          open_file_cache_min_uses 2;
+          open_file_cache_errors on;
+
+          # кеширование в браузере
+          location ~ \.(js|json|css|svg|svgz|eot|otf|woff|woff2|ttf|rss|atom|ico|jpg|jpeg|gif|png)$ {
+                 expires 14d; # хранить кеш 14 дней
+          }
+   }
+
+   location /api/ {    # Endpoint для серверной части. Работает как reverse proxy отправляя запросы в Kestrel работающим отдельным процессом.
+          proxy_pass http://localhost:5000/; # Порт должен соответствовать настройкам kestrel в SunEngine.json
+          client_max_body_size 11M;  # максимальный размер тела запроса, который допускает Nginx ~= максимальный размер для upload файла
+   }
+</code></pre></div><p>server {  # редирект в случае входа через http
+listen 80;
+listen [::]:80;</p> <div class="language- extra-class"><pre><code>   server_name mysite.site;
+   return 301 https://$host$request_uri;
+</code></pre></div><p>}</p> <p>Для работы необходимо запустить Kestrel сервис отдельным процессом.
+Инструкция в статье.
+Порт Kestrel в &quot;/Config/SunEngine.json&quot; должен совпадать с портом  конфигурации в nginx.</p> <h3 id="http"><a href="#http" class="header-anchor">#</a> HTTP</h3> <p>Использовать только для целей разработки или тестирования. Не использовать на production.</p> <p>server {
+listen 80; # http порт
+listen [::]:80;</p> <div class="language- extra-class"><pre><code> server_name mysite.site; # домен
+     
+ add_header X-Frame-Options &quot;SAMEORIGIN&quot;;
+ add_header X-XSS-Protection &quot;1; mode=block&quot;;
+ add_header X-Content-Type-Options &quot;nosniff&quot;;
+ 
+ charset utf-8;
+     
+ location / {    # Endpoint для клиентской части
+    root /site/mysite.site/wwwroot;
+    try_files $uri $uri/ /index.html;   # если файл не найден - возвращаем index.html
+ }
+     
+ location /api/ {    # Endpoint для серверной части. Работает как reverse proxy отправляя запросы в Kestrel работающий отдельным процессом.
+    proxy_pass  http://localhost:5000/;   # Порт должен соответствовать настройкам kestrel в &quot;/Config/SunEngine.json&quot;
+        
+    client_max_body_size 11M;  # максимальный размер тела запроса, который допускает Nginx ~= максимальный размер для upload файла  
+ }
+</code></pre></div><p>}</p> <h3 id="метки"><a href="#метки" class="header-anchor">#</a> Метки:</h3> <p>deploy</p> <p>http</p> <p>https</p> <p>nginx</p> <p>production</p> <p>server</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.49497762.js" defer></script><script src="/assets/js/2.fc39bb15.js" defer></script><script src="/assets/js/26.cfa48c1e.js" defer></script>
+  </body>
+</html>
