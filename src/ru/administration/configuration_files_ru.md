@@ -71,11 +71,3 @@
 
 `"dotnet SunEngine.dll migrate init seed config:MySite"`
 
-
-### Метки:
-
-`config`
-
-`конфигурация`
-
-`настройка`
