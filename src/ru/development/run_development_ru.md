@@ -33,6 +33,7 @@
 Правый клик мыши на `SunEngine Solution -> "Add" -> "Attach Existing Folder" -> выбрать папку "SunEngine/Client"`.
 
 Открываем npm меню:
+
 - На `"package.json"`, правый клик мыши `-> "Tools" -> "Show npm Scripts"`.
 - Клиентская часть запускается через npm скрипт `"dev run"`.
 
