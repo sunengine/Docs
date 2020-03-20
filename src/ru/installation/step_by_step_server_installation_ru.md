@@ -6,50 +6,81 @@
 
 ### Добавляем репозиторий:
 
+```
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+
 sudo dpkg -i packages-microsoft-prod.deb
+```
 
 
 ### Устанавливаем:
 
+```
 sudo add-apt-repository universe
 sudo apt-get update
 sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install aspnetcore-runtime-3.1
+```
+
 
 ### Устанавливаем PostgreSql
+
 Ссылка на инструкцию.
+
 
 ### Устанавливаем:
 
+```
 sudo apt-get install postgresql-11
+```
+
 
 ### Устанавливаем пароль для пользователя:
 
+```
 sudo -u postgres psql
+```
 
-Открывается консоль postgres, набираем команду:
 
+Открывается консоль `postgres`, набираем команду:
+
+```
 ALTER USER postgres PASSWORD 'postgres_user_password';
+```
 
-Вместо "postgres_user_password" необходимо задать пароль.
 
-Cоздаём базу данных "my_site.com" 
+Вместо `"postgres_user_password"` необходимо задать пароль.
 
+
+Cоздаём базу данных `"my_site.com"`
+
+```
 CREATE DATABASE my_site.com;
+```
+
 
 ### Собираем проект локально и записываем на сервер
 
-    Скачиваем с репозитория код SunEngine на локальный компьютер.
-    Все скрипты сборки и публикации находятся в директории "Scripts/"
-    В директории "Scripts/" копируем файл "PUBLISH.template" в "PUBLISH" и редактируем его, настраивая все параметры
-    Собираем проект выполнив скрипт - "build.sh" (появится папка "build" в корневом каталоге проекта)
-    Создаём на сервере папку "/site/my_site.com". Путь может быть любым.
-    Выкладываем "build" на сервер, запуская скрипт "publish.sh"
-    На сервере редактируем файлы настроек в директории  "/site/my_site.com/Config" 
-        Настройки подключения в "/Config/DataBaseConnection.json".
+Скачиваем с репозитория код `SunEngine` на локальный компьютер.
 
+Все скрипты сборки и публикации находятся в директории `"Scripts/"`
+
+В директории `"Scripts/"` копируем файл `"PUBLISH.template"` в `"PUBLISH"` и редактируем его, настраивая все параметры
+
+Собираем проект выполнив скрипт - `"build.sh"` (появится папка `"build"` в корневом каталоге проекта)
+
+Создаём на сервере папку `"/site/my_site.com"`. Путь может быть любым.
+
+Выкладываем `"build"` на сервер, запуская скрипт `"publish.sh"`
+
+На сервере редактируем файлы настроек в директории  `"/site/my_site.com/Config"`
+
+
+
+### Настройки подключения в "/Config/DataBaseConnection.json".
+
+```
 {
  "DataBaseConnection": {   
     "Linq2dbProvider": "PostgreSQL.9.5",
@@ -57,67 +88,93 @@ CREATE DATABASE my_site.com;
     "ConnectionString": "Host=localhost;Database=my_site.com;Username=postgres;Password=postgres_user_password"
   }
 }
+```
+
 
 Заполняем базу данных начальными данными
-Заходим в папку "/site/my_site.com/Server"
+
+Заходим в папку `"/site/my_site.com/Server"`
+
 
 ### Запускаем
 
+```
 dotnet SunEngine.dll init migrate
+```
+
 
 Эта команда создаёт таблицы и другие структуры в базе данных и заполняет начальными данными.
-Подробнее о командах "dotnet SunEngine.dll" в статье.
-Создаём kestrel процесс на systemd
+
+Подробнее о командах `"dotnet SunEngine.dll"` в статье.
+
+Создаём `kestrel` процесс на `systemd`
+
 Ссылка на инструкцию.
 
-systemd позволяет после старта сервера постоянно держать необходимые процессы запущенными, и перезапускать, если они вынужденно выключаются.
-Создаём файл "my_site.com.service" в папке "/etc/systemd/system"
 
-[Unit]
-Description=SunEngine my_site.com
+`systemd` позволяет после старта сервера постоянно держать необходимые процессы запущенными, и перезапускать, если они вынужденно выключаются.
 
-[Service]
-WorkingDirectory=/site/my_site.com
-ExecStart=/usr/bin/dotnet /site/my_site.com/Server/SunEngine.dll server
-SyslogIdentifier=my_site.com
-User=www-data
-Restart=always
-RestartSec=10
-KillSignal=SIGINT
-Environment=ASPNETCORE_ENVIRONMENT=Production
 
-[Install]
-WantedBy=multi-user.target
+Создаём файл `"my_site.com.service"` в папке `"/etc/systemd/system"`
+
+```
+  [Unit]
+  Description=SunEngine my_site.com
+
+  [Service]
+  WorkingDirectory=/site/my_site.com
+  ExecStart=/usr/bin/dotnet /site/my_site.com/Server/SunEngine.dll server
+  SyslogIdentifier=my_site.com
+  User=www-data
+  Restart=always
+  RestartSec=10
+  KillSignal=SIGINT
+  Environment=ASPNETCORE_ENVIRONMENT=Production
+
+  [Install]
+  WantedBy=multi-user.target
+```
 
 
 ### Включаем процесс:
 
+```
 systemctl enable my_site.com
+```
 
 
 ### Команды которые могут пригодиться
 
 Посмотреть логи:
 
-  journalctl -fxeu my_site.com
+```  journalctl -fxeu my_site.com
+```
+
 
 Перезапуск процесса:
 
-  systemctl restart my_site.com
+```
+systemctl restart my_site.com
+```
+
 
 ### Установка Nginx веб сервера
 
 Ссылка на инструкцию.
 
+```
 sudo apt-get update
 sudo apt-get install nginx
+```
 
-Создание Nginx конфигурации
 
-Запуск на Nginx.
+Создание `Nginx` конфигурации
 
-Создаём файл "/etc/nginx/sites-available/my_site.com"
+Запуск на `Nginx`.
 
+Создаём файл `"/etc/nginx/sites-available/my_site.com"`
+
+```
 server {
     listen 443 http2; # https port
     listen [::]:443 http2; # IP v6
@@ -172,25 +229,19 @@ server { # редирект в случае входа через http
     server_name mysite.site;
     return 301 https://$host$request_uri;
 }
+```
+
 
 Активизируем настройки my_site.com:
 
+```
 sudo ln -s /etc/nginx/sites-available/my_site.com /etc/nginx/sites-enabled/my_site.com
+```
+
 
 Перезагружаем настройки Nginx:
 
+```
 sudo systemctl reload nginx
+```
 
-### Метки:
-
-deploy
-
-install
-
-инсталляция
-
-руководство
-
-установка
-
-установка с нуля

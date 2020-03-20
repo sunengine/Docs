@@ -9,7 +9,7 @@
 
 ### Запуск из консоли
 
-В папке `"SunEngine/Server/SunEngine.Cli"`.
+В директории `"SunEngine/Server/SunEngine.Cli"`.
 
 Заполняем базу начальными данными `"dotnet run migrate init seed"` (если не сделано).
 
@@ -32,8 +32,7 @@
 
 Правый клик мыши на `SunEngine Solution -> "Add" -> "Attach Existing Folder" -> выбрать папку "SunEngine/Client"`.
 
-Открываем npm меню:
-
+Открываем `npm` меню:
 - На `"package.json"`, правый клик мыши `-> "Tools" -> "Show npm Scripts"`.
 - Клиентская часть запускается через npm скрипт `"dev run"`.
 
