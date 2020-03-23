@@ -14,7 +14,7 @@ module.exports = {
       [ 
 //    { title: 'Russian', collapsable: false, children: [ '/src/ru/' ] },
 //    { title: 'English', collapsable: false, children: [ '/src/en/' ] },
-      { title: 'О проекте', collapsable: false, children: [ '/src/ru/' ] },
+      { title: 'О проекте', collapsable: false, sidebarDepth: 2, children: [ '/src/ru/' ] },
       { title: 'Администрирование',
         collapsable: false,
         sidebarDepth: 2,
