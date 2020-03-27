@@ -1,10 +1,10 @@
-## Пошаговое руководство по установке на Ubuntu сервер
+# Пошаговое руководство по установке на Ubuntu сервер
 
-### Устанавливаем Asp.Net Core Runtime. 
+## Устанавливаем Asp.Net Core Runtime. 
 
 Ссылка на инструкцию.
 
-### Добавляем репозиторий:
+## Добавляем репозиторий:
 
 ```
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -13,7 +13,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 ```
 
 
-### Устанавливаем:
+## Устанавливаем:
 
 ```
 sudo add-apt-repository universe
@@ -24,19 +24,19 @@ sudo apt-get install aspnetcore-runtime-3.1
 ```
 
 
-### Устанавливаем PostgreSql
+## Устанавливаем PostgreSql
 
 Ссылка на инструкцию.
 
 
-### Устанавливаем:
+## Устанавливаем:
 
 ```
 sudo apt-get install postgresql-11
 ```
 
 
-### Устанавливаем пароль для пользователя:
+## Устанавливаем пароль для пользователя:
 
 ```
 sudo -u postgres psql
@@ -60,7 +60,7 @@ CREATE DATABASE my_site.com;
 ```
 
 
-### Собираем проект локально и записываем на сервер
+## Собираем проект локально и записываем на сервер
 
 Скачиваем с репозитория код `SunEngine` на локальный компьютер.
 
@@ -78,7 +78,7 @@ CREATE DATABASE my_site.com;
 
 
 
-### Настройки подключения в "/Config/DataBaseConnection.json".
+## Настройки подключения в "/Config/DataBaseConnection.json".
 
 ```
 {
@@ -96,7 +96,7 @@ CREATE DATABASE my_site.com;
 Заходим в папку `"/site/my_site.com/Server"`
 
 
-### Запускаем
+## Запускаем
 
 ```
 dotnet SunEngine.dll init migrate
@@ -136,14 +136,14 @@ dotnet SunEngine.dll init migrate
 ```
 
 
-### Включаем процесс:
+## Включаем процесс:
 
 ```
 systemctl enable my_site.com
 ```
 
 
-### Команды которые могут пригодиться
+## Команды которые могут пригодиться
 
 Посмотреть логи:
 
@@ -158,7 +158,7 @@ systemctl restart my_site.com
 ```
 
 
-### Установка Nginx веб сервера
+## Установка Nginx веб сервера
 
 Ссылка на инструкцию.
 
