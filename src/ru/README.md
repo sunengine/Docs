@@ -87,7 +87,7 @@
 - Сделано с любовью ❤
 - Качественный код и архитектура.
 - [План развития проекта](https://sunengine.site/texts/roadmap).
-- [Исходник на GitHub](https://github.com/sunengine).
+- [Исходник на GitHub](https://github.com/sunengine/SunEngine).
 
 
 

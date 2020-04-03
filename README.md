@@ -1,9 +1,9 @@
 ---
 home: true
-heroText: Based on AspNet Core, VueJS, Quasar
-tagline: Site engine with blog, forum and articles sections features support
-actionText: Choose Language →
-actionLink: /src/
+heroText: SunEngine 
+tagline: Site engine with blog, forum and articles sections features support, build on AspNet Core, VueJS, Quasar technologies.
+actionText: Documentation →
+actionLink: /src/en/
 features:
 - title: Quick and fast
   details: A one-page application loads only what you need, without unnecessary requests (SPA). Quick access to data based on linq2db. Efficient and custom caching
@@ -11,7 +11,7 @@ features:
   details: The ability to flexibly configure the rights of user groups for each section of the site
 - title: Functional Admin
   details: Ability to create blogs, forums, articles sections; Creating subsections - interactive editing of site menu, as well as additional menus, switch basic and additional skins, user groups and changing their permissions, creating site activities Sections, and other features...
-footer: MIT Licensed | Copyright © 2018-present Evan You
+footer: Copyright © Dmitrij Polyanin  |  Used SunEngine License
 ---
 
 ## Features
