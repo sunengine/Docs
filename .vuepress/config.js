@@ -1,7 +1,7 @@
 module.exports = {
   title: 'SunEngine Docs',
   descriptions: 'SunEngine documentation project',
-  base: '/SunEngine.Docs/',
+  base: '/Docs/',
   dest: 'docs',
   themeConfig: {
     nav: [
