@@ -2,7 +2,7 @@
 
 ## Создать базу
 
-Если в корне проекта нет папк и `Config`, скопировать её из `Config.dev.template`. То есть сдлелать папку `Config` с тем же содержанием что и `Config.dev.template` в корне проекта.
+Если в корне проекта нет директории `Config`, её нужно скопировать из `Config.dev.template`. Иначе говоря, необходимо в корне проекта создать директорию `Config` с тем же содержимым что и `Config.dev.template` в корне проекта.
 
 Создать базу данных `<data_base_name>` на любой совместимой субд и прописать настройки и строку подключения в файл `/SunEngine/Config/DataBaseConnection.json`.
 
@@ -13,11 +13,9 @@
 
 Заполняем базу начальными данными `dotnet run migrate init seed` (если не сделано).
 
-Запускаем сервер `dotnet run server`.
+Запускаем сервер командой `dotnet run server` в дирректории `SunEngine/Client`.
 
-В папке `SunEngine/Client`.
-
-Инсталлируем npm модули `yarn install` или `npm install` (если не сделано).
+Инсталлируем *npm*-модули `yarn install` или `npm install` (если не сделано).
 
 Запускаем клиент `quasar dev` - откроется браузер с сайтом.
 
@@ -28,11 +26,9 @@
 
 Серверная часть запускается стартом проекта `/Server/SunEngine.Cli`.
 
-Добавление клиента на панель `Solution explorer`: 
+Для запуска клиентской части, необходимо выполнить "Добавление клиента на панель" `Solution explorer` правым кликом мыши на `SunEngine Solution -> Add -> Attach Existing Folder ->` выбрать каталог `SunEngine/Client`.
 
-Правый клик мыши на `SunEngine Solution -> Add -> Attach Existing Folder -> выбрать папку SunEngine/Client`.
-
-Открываем `npm` меню:
-- На `package.json`, правый клик мыши `Tools -> Show npm Scripts`.
-- Клиентская часть запускается через npm скрипт `dev run`.
+Далее открываем `npm` меню и выполняем:
+- на файле `package.json` правый клик мыши `Tools -> Show npm Scripts`;
+- клиентская часть запускается через *npm*-скрипт `dev run`.
 
