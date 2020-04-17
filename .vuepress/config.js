@@ -1,8 +1,8 @@
 module.exports = {
   title: 'SunEngine Docs',
   descriptions: 'SunEngine documentation project',
-  base: '/Docs/',
-  dest: 'docs',
+  base: '/',
+  dest: '',
   themeConfig: {
     nav: [
       //      {text: 'Home', link: '/' },
@@ -65,7 +65,7 @@ module.exports = {
           ]
         },
         {
-          title: 'Инсталляция',
+          title: 'Ручная инсталляция',
           collapsable: false,
           sidebarDepth: 2,
           children: [
