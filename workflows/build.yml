@@ -33,5 +33,5 @@ jobs:
       env:
         REPO: git@github.com:SunEngine/sunengine.github.io.git
         BRANCH: master
-        SSH_PRIVATE_KEY: ${{ secrets.AutoBuild }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIV }}
         FOLDER: docs
