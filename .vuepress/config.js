@@ -2,7 +2,7 @@ module.exports = {
   title: 'SunEngine Docs',
   descriptions: 'SunEngine documentation project',
   base: '/',
-  dest: '',
+  dest: 'docs',
   themeConfig: {
     nav: [
       //      {text: 'Home', link: '/' },
