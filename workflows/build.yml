@@ -1,0 +1,35 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout SunEngine
+      uses: actions/checkout@v2
+
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: npm install vuepress
+      run: |
+        npm install -g vuepress
+      env:
+        CI: true
+
+    - name: Build
+      run: |
+        npx vuepress build
+
+    - name: Publish to sunengine.github.io
+      uses: s0/git-publish-subdir-action@master
+      env:
+        REPO: git@github.com:SunEngine/sunengine.github.io.git
+        BRANCH: master
+        SSH_PRIVATE_KEY: ${{ secrets.AutoBuild }}
+        FOLDER: docs
