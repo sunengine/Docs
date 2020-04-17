@@ -14,10 +14,17 @@ module.exports = {
       [
         //    { title: 'Russian', collapsable: false, children: [ '/src/ru/' ] },
         //    { title: 'English', collapsable: false, children: [ '/src/en/' ] },
-        { //title: 'О проекте',
+        {
+          // title: 'О проекте',
           collapsable: false,
-          sidebarDepth: 2,
-          children: ['/src/ru/']
+          sidebarDepth: 0,
+          children: ['/src/ru/about.html']
+        },
+        {
+          //  title: 'Инсталляция',
+          collapsable: false,
+          sidebarDepth: 0,
+          children: ['/src/ru/install.html']
         },
         {
           title: 'Администрирование',
