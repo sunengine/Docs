@@ -32,6 +32,6 @@ jobs:
       uses: s0/git-publish-subdir-action@master
       env:
         REPO: git@github.com:sunengine/sunengine.github.io.git
-        BRANCH: master  
+        BRANCH: master
         FOLDER: docs
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIV }}
