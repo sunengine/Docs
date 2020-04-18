@@ -72,7 +72,7 @@ CREATE DATABASE my_site.com;
 
 Создаём на сервере папку `"/site/my_site.com"`. Путь может быть любым.
 
-Выкладываем `"build"` на сервер, запуская скрипт `"publish.sh"`
+Выкладываем `"build"` на сервер, запуская скрипт `"publi.sh"`
 
 На сервере редактируем файлы настроек в директории  `"/site/my_site.com/Config"`
 
@@ -147,7 +147,7 @@ systemctl enable my_site.com
 
 Посмотреть логи:
 
-```  journalctl -fxeu my_site.com
+```journalctl -fxeu my_site.com
 ```
 
 

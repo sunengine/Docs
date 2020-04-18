@@ -58,9 +58,9 @@
 Необходимо учитывать, что имя директории конфигурации должно быть либо `Config`, либо заканчиваться на `.Config`.
 
 
-### Примеры:
+### Примеры
 
-`dotnet SunEngine.dll server` - запуск с директорией по умолчанию `Config`, в этом случае системой будет произведён поиск по дереву директорий от запускаемой вверх.
+`dotnet SunEngine.dll server` - запуск с директорией по умолчанию `Config`, в этом случае системой будет произведён поиск по дереву директорий от запускаемой вверх
 
 `dotnet SunEngine.dll server config:MySite` - запуск с директорией `MySite.Config` (суффикс `.Config` добавляется автоматически)
 
@@ -68,5 +68,5 @@
 
 Команда `config` действует так же и для всех других команд: `init, migrate, seed`..., например:
 
-`dotnet SunEngine.dll migrate init seed config:MySite`
+`dotnet SunEngine.dll migrate init seed config:MySite`.
 

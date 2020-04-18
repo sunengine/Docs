@@ -14,20 +14,13 @@ module.exports = {
       [
         //    { title: 'Russian', collapsable: false, children: [ '/src/ru/' ] },
         //    { title: 'English', collapsable: false, children: [ '/src/en/' ] },
-        {
-          // title: 'О проекте',
+        { //title: 'О проекте',
           collapsable: false,
-          sidebarDepth: 0,
-          children: ['/src/ru/about.html']
+          sidebarDepth: 2,
+          children: ['/src/ru/']
         },
         {
-          //  title: 'Инсталляция',
-          collapsable: false,
-          sidebarDepth: 0,
-          children: ['/src/ru/install.html']
-        },
-        {
-          title: 'Администрирование',
+          title: 'Инсталляция',
           collapsable: false,
           sidebarDepth: 2,
           //      children: [ '/src/ru/administration/README.html' ],
@@ -37,6 +30,14 @@ module.exports = {
               sidebarDepth: 2,
               children: ['/src/ru/administration/configuration_files_ru.html']
             },
+          ]
+        },
+        {
+          title: 'Администрирование',
+          collapsable: false,
+          sidebarDepth: 2,
+          //      children: [ '/src/ru/administration/README.html' ],
+          children: [
             {
               collapsable: false,
               sidebarDepth: 2,
