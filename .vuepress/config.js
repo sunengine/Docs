@@ -41,12 +41,7 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 2,
               children: ['/src/ru/administration/site_structure_ru.html']
-            },
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/administration/systemDmounting_ru.html']
-            },
+            }
           ]
         },
         {
@@ -90,6 +85,11 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 2,
               children: ['/src/ru/installation/nginx_configuration_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/administration/systemDmounting_ru.html']
             },
             {
               collapsable: false,
