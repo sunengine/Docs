@@ -17,10 +17,11 @@ help                    показать все команды
 ## Команды заполения денными для тестов 
 
 ```
-seed:<CategoryName>:<mCount>:<cCount>      
+seed:<category>:<materials>:<comments>      
                         seed category and all subcategories with materials and comments
-                        mCount - materials count, default if skipped
-                        cCount - comments count, default if skipped
+                        <category> - category name
+                        <materials> - materials count, default if skipped
+                        <comments> - comments count, default if skipped
                         example - seed:SomeCategory:20:10
                         
 append-cat-name         add category name to material titles on 'seed'
