@@ -2,7 +2,7 @@
 
 ## Устанавливаем Asp.Net Core Runtime
 
-Ссылка на инструкцию.
+[Ссылка](https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-package-manager-ubuntu-1804#install-the-aspnet-core-runtime) на инструкцию.
 
 ### Добавляем репозиторий
 
@@ -26,7 +26,7 @@ sudo apt-get install aspnetcore-runtime-3.1
 
 ## Устанавливаем PostgreSql
 
-Ссылка на инструкцию.
+[Ссылка](https://www.postgresql.org/download/linux/ubuntu/) на инструкцию.
 
 
 ### Устанавливаем
@@ -61,7 +61,7 @@ CREATE DATABASE my_site.com;
 
 ## Собираем проект локально и записываем на сервер
 
-Скачиваем с репозитория код `SunEngine` на локальный компьютер.
+Скачиваем с [репозитория](https://github.com/sunengine/SunEngine) код `SunEngine` на локальный компьютер.
 
 Все скрипты сборки и публикации находятся в директории `Scripts/`
 
@@ -106,7 +106,7 @@ dotnet SunEngine.dll init migrate
 
 ## Создаём kestrel сервис на systemd
 
-Ссылка на инструкцию.
+[Ссылка](https://kimsereyblog.blogspot.com/2018/05/manage-kestrel-process-with-systemd.html) на инструкцию.
 
 `systemd` позволяет после старта сервера постоянно держать необходимые процессы запущенными, и перезапускать, если они вынужденно выключаются.
 
@@ -153,7 +153,7 @@ systemctl restart my_site.com
 
 ## Конфигурация Nginx веб сервера
 
-Ссылка на инструкцию.
+[Ссылка](https://kimsereyblog.blogspot.com/2018/06/asp-net-core-with-nginx.html) на инструкцию.
 
 ### Устанавливаем `Nginx`
 
