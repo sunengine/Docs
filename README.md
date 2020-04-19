@@ -14,26 +14,19 @@ features:
 footer: Copyright © Dmitrij Polyanin  |  Used SunEngine License
 ---
 
-## Features
+### Features
 
-Ability to create blog
-
-Create a forum with sections
-
-Create articles and articles sections
-
-Ability to comment on any materials on the site
-
-Creating a user profile on the site
-
-User’s personal account with the ability to edit user information and personal data
-
-Administration through the admin panel
-
-Ability to create and modify skins for the site, a choice of already done skins.
+- Ability to create blog
+- Create a forum with sections
+- Create articles and articles sections
+- Ability to comment on any materials on the site
+- Creating a user profile on the site
+- User’s personal account with the ability to edit user information and personal data
+- Administration through the admin panel
+- Ability to create and modify skins for the site, a choice of already done skins.
 
 
-## Thoughtful and friendly interface
+### Thoughtful and friendly interface
 
 A one-page application with a modern and beautiful interface.
 
@@ -42,12 +35,7 @@ Works on personal computers, tablets, mobile phones.
 In the future, possibility to compile as a native application of Android, iOS, Windows and Linux.
 
 
-
-# Technical features
-
-## Technologies used
-
-### The project based on modern front edge technologies
+###  Modern front edge technologies
 
 Asp.Net Core 3.1
 
@@ -61,33 +49,24 @@ Linq2db ORM - database access
 
 ### Security
 
-Developed using latest technologies of privacy and security
-
-An innovative authorization system based on three tokens to protect against interception of authorization data, from XSS and CSRF attacks
-
-AES encryption to protect authorization tokens
-
-Cleaning text data on the server from malicious scripts
-
-HTTPS secure protocol
-
-Protection against flood requests
-= Filters against duplicate publication requests
-= Captcha on critical areas
-
-Defense mechanisms against many malicious attack types
+- Developed using latest technologies of privacy and security
+- An innovative authorization system based on three tokens to protect against interception of authorization data, from XSS and CSRF attacks
+- AES encryption to protect authorization tokens
+- Cleaning text data on the server from malicious scripts
+- HTTPS secure protocol
+- Protection against flood requests  
+  - Filters against duplicate publication requests
+  - Captcha on critical areas
+- Defense mechanisms against many malicious attack types
 
 
 ### Hosting
 
-Linux or Windows server
-
-Bash scripts to build, deploy and update
-
-Installation Guide for Ubuntu 18.04 Server (Russian)
+- Linux or Windows server
+- Bash scripts to install, build, deploy and update
 
 
-## Additionally
+### Additionally
 
 Made with love ❤
 
@@ -95,9 +74,9 @@ Quality code and architecture
 
 Road map (Russian)
 
-## Contacts
+### Contacts
 
-Dmitrij Polianin telegram: @Okeanij
+Dmitrij Polianin telegram: [@Okeanij](https://t.me/Okeanij)
 
-SunEngine telegram group: @SunEngine
+SunEngine telegram group: [@SunEngine](https://t.me/SunEngine)
 
