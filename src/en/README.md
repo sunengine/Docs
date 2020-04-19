@@ -1,7 +1,13 @@
-### English
+# SunEngine
 
-[Prerequisites en_US](/src/en/installation/prerequisites_en.html)
+## Движок для сайтов с возможностями блога, статей и форума
 
-[Run Development en_US](/src/en/development/run_development_en.md)
+Репозиторий: [https://github.com/sunengine/SunEngine](https://github.com/sunengine/SunEngine)
 
-[Site Structure en_US](/src/en/administration/site_structure_en.md)
+Сайт: [https://sunengine.site](https://sunengine.site)
+
+Демо: [https://demo.sunengine.site](https://demo.sunengine.site)
+
+Лицензия: [SunEngine License](/src/ru/license.html)
+
+Автор проекта: [Дмитрий Полянин](https://sunengine.site/user/okeanij). Telegram: [@Okeanij](https://t.me/Okeanij)
