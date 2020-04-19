@@ -22,7 +22,7 @@ module.exports = {
         },
         {
           collapsable: false,
-          sidebarDepth: 2,
+          sidebarDepth: 0,
           children: ['/src/ru/install.html']
         },
         {
