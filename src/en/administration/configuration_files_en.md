@@ -1,72 +1,71 @@
-# Файлы конфигурации
+# Configuration files
 
 
-## Содержимое директории конфигурации
+## Contents of the configuration directory
+
+Permanent settings
+
+- `DataBaseConnection.json` - connection to the database
+- `SunEngine.json` - engine settings
+- `ServerInfo.json` - server information (name, version, description and others)
+- `LogConfig.json` - setting up logs
 
 
-Постоянные настройки
+## Directory `MailTemplates`
 
-- `DataBaseConnection.json` - подключение к базе данных
-- `SunEngine.json` - настройки движка
-- `ServerInfo.json` - информация о сервере (название, версия, описание и другие)
-- `LogConfig.json` - настройка логов
+Email templates for user registration and other situations.
 
+`layout.html` - a wrapper for all mail templates.
 
-## Директория `MailTemplates`
+`email-change.html`,` private-message.html`, `register.html`,` reset-password.html` are email message templates.
 
-Шаблоны почтовых сообщений при регистрации пользователя и для других ситуаций.
+Directory `Init`. Only for starting initialization of the site database.
 
-`layout.html` - обёртка всех почтовых шаблонов.
+Used only in the command - `dotnet SunEngine.dll init`:
 
-`email-change.html`, `private-message.html`, `register.html`, `reset-password.html` - шаблоны почтовых сообщений.
+`Init / Avatars` - user avatars
 
-Директория `Init`. Только для стартовой инициализации базы данных сайта.
+`Init / Categories` - creating and configuring categories, then on the working server the categories are configured through the admin panel.
 
-Используется только в команде - `dotnet SunEngine.dll init`:
+`Init / Sections` - creating and configuring components: activity and posts.
 
-`Init/Avatars` - аватарки пользователей
+`Init / Materials` - the creation of materials.
 
-`Init/Categories` - создание и настройка категорий, далее на рабочем сервере категории настраиваются через админку.
+`Init / Menu` - creation and configuration of the site menu, only for the init command, then on the working server the menus are configured through the admin panel.
 
-`Init/Sections` - создание и настройка компонентов: активность и посты.
+`Init / Avatars` - set user avatars when filling the database, the file name must match the user name
 
-`Init/Materials` - создание материалов.
+`SeedTemplates` - lines for filling materials in test mode.
 
-`Init/Menu` - создание и настройка меню сайта, только для команды init, далее на рабочем сервере меню настраиваются через админку.
+`Init / Config.json` - initial configurationItems settings from the` Configuration` admin section.
 
-`Init/Avatars` - задание аватарок пользователей при заполнении базы, имя файла должно совпадать с именем пользователя
+`Init / Users.json` - creating users.
 
-`SeedTemplates` - строки для заполнения материалов в тестовом режиме.
-
-`Init/Config.json` - начальные настройки ConfigurationItems из раздела админки `Конфигурация`.
-
-`Init/Users.json` - создание пользователей.
-
-`Init/Roles.json` - создание ролей пользователей и их прав.
+`Init / Roles.json` - creating user roles and their rights.
 
 
-## Использование директории конфигурации
+## Using the configuration directory
 
-По умолчанию для размещения конфигурационных файлов используется директория `Config`.
+By default, the `Config` directory is used to host the configuration files.
 
-В репозитории проекта этой директории нет - её необходимо создать копированием из:
-- `Config.dev.template` в случае запуска для целей разработки;
-- `Config.server.template` в случае запуска на сервере.
+There is no this directory in the project repository - you need to create it by copying from:
+- `Config.dev.template` in case of launch for development purposes;
+- `Config.server.template` if launched on the server.
 
-Также, нестандартную директорию конфигурации можно указать явно - для этого служит опция `config:<AbsoluteOrRelativePath>`.
+Also, a non-standard configuration directory can be specified explicitly - the option `config: <AbsoluteOrRelativePath>` serves for this.
 
-Необходимо учитывать, что имя директории конфигурации должно быть либо `Config`, либо заканчиваться на `.Config`.
+Please note that the name of the configuration directory must either be `Config` or end with` .Config`.
 
 
-### Примеры
+### Examples
 
-`dotnet SunEngine.dll server` - запуск с директорией по умолчанию `Config`, в этом случае системой будет произведён поиск по дереву директорий от запускаемой вверх
+`dotnet SunEngine.dll server` - start with the default directory` Config`, in this case the system will search the directory tree from the up
 
-`dotnet SunEngine.dll server config:MySite` - запуск с директорией `MySite.Config` (суффикс `.Config` добавляется автоматически)
+`dotnet SunEngine.dll server config: MySite` - start with the directory` MySite.Config` (suffix `.Config` is added automatically)
 
-`dotnet SunEngine.dll server config:MySite.Config` - пример аналогичный `MySite.Config`
+`dotnet SunEngine.dll server config: MySite.Config` - an example similar to` MySite.Config`
 
-Команда `config` действует так же и для всех других команд: `init, migrate, seed`..., например:
+The `config` command works the same for all other commands:` init, migrate, seed` ..., for example:
 
-`dotnet SunEngine.dll migrate init seed config:MySite`.
+`dotnet SunEngine.dll migrate init seed config: MySite`.
 

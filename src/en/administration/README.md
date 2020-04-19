@@ -1,4 +1,4 @@
-# Администрирование
+# Administration
 
 [Configuration_files ru_RU](/src/ru/administration/configuration_files_ru.html)
 

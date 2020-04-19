@@ -1,65 +1,65 @@
-# Структура сайта
+# Site structure
 
-Большинство страниц сайта принадлежат одной из следующих категорий...
-
-
-## Страница материала
-
-Страницами материалов являются:
-- Пост в блоге
-- Тема на форуме
-- Статья
+Most site pages belong to one of the following categories...
 
 
-## Страница категории
+## Material page
 
-Страницами категорий являются:
-- Лента блога
-- Разделы форума
-- Список статей
-
-
-## Страница компонента
-
-Страницами компонентов являются:
-
-`Posts` - вывод в форме постов материалов из разных категорий в порядке убывания даты (настраивается)
-
-`Activities` - вывод в форме ссылок новых материалов и комментариев из разных категорий в порядке убывания даты (категории для вывода новых материалов и категории для вывода новых комментариев настраиваются отдельно)
-
-`Кастомная страница` - страница со своей логикой и кодом (может быть сделана разработчиками по индивидуальным требованиям).
+Material pages are:
+- Blog post
+- Forum thread
+- Article
 
 
-## Категории
+## Category page
 
-Категория это контейнер для дочерних элементов, которыми могут быть:
-- Дочерние категории
-- Материалы
-
-
-## Способ отображения страницы категории
-
-Выбирается в шаблоне категории, на данный момент возможные варианты это:
-- Блог
-- Форум в 1 поток
-- Форум с подразделами в 1 уровень
-- Форум с подразделами в 2 уровня
-- Статьи в 1 раздел
-- Статьи с подразделами в 1 уровень
-- Статьи с подразделами в 2 уровня
+Category pages are:
+- Blog Feed
+- Forum sections
+- List of articles
 
 
-## Материалы
+## Component Page
 
-Отображаются и работают одинаково для всех видов категорий (блог, форум, статьи).
+Component pages are:
 
-В более новых версиях возможно станет доступно отдельное отображение и поведение для материалов различных типов категорий.
+`Posts` - output in the form of posts of materials from different categories in descending order of date (customizable)
+
+`Activities` - output in the form of links of new materials and comments from different categories in descending order of date (categories for outputting new materials and categories for outputting new comments are set separately)
+
+`Custom page` - a page with its own logic and code (can be made by developers according to individual requirements).
 
 
-## Комментарии
+## Categories
 
-Комментарии относятся к материалу, к одному материалу может быть множество комментариев.
+A category is a container for child elements, which can be:
+- Child categories
+- Materials
 
-На данный момент комментарии на уровне отображения имеют плоскую структуру.
 
-Планируется улучшение структуры комментариев до 2 уровневого дерева.
+## Method for displaying a category page
+
+Selected in the category template, at the moment the possible options are:
+- Blog
+- Forum in 1 thread
+- Forum with subsections in 1 level
+- Forum with subsections in 2 levels
+- Articles in 1 section
+- Articles with subsections in level 1
+- Articles with subsections in 2 levels
+
+
+## Materials
+
+They are displayed and work the same way for all types of categories (blog, forum, articles).
+
+In newer versions, a separate display and behavior may become available for materials of various types of categories.
+
+
+## Comments
+
+Comments relate to material; there can be many comments to one material.
+
+Currently, comments at the display level have a flat structure.
+
+It is planned to improve the structure of comments to a 2 level tree.

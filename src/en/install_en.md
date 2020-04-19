@@ -1,4 +1,5 @@
-# Инсталляция 
-## Скрипт install.sh
+# Installation
 
-Скрипт в разработке
+## script install.sh
+
+Script in development
