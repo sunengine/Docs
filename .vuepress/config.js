@@ -17,7 +17,7 @@ module.exports = {
         { //title: 'О проекте',
           collapsable: false,
           sidebarDepth: 0,
-          children: ['/src/ru/']
+          children: ['/src/ru/about.html']
         },
         {
           title: 'Инсталляция',
