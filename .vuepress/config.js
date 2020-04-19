@@ -5,59 +5,83 @@ module.exports = {
   dest: 'docs',
   themeConfig: {
     nav: [
-      //      {text: 'Home', link: '/' },
       { text: 'EN', link: '/src/en/' },
       { text: 'RU', link: '/src/ru/' }
     ],
-    //  sidebar: 'auto'
     sidebar:
       [
-        //    { title: 'Russian', collapsable: false, children: [ '/src/ru/' ] },
-        //    { title: 'English', collapsable: false, children: [ '/src/en/' ] },
-        { //title: 'О проекте',
+        {
           collapsable: false,
           sidebarDepth: 0,
           children: ['/src/ru/']
         },
-        { //title: 'О проекте',
+        {
           collapsable: false,
           sidebarDepth: 0,
           children: ['/src/ru/about.html']
         },
         {
-          title: 'Инсталляция',
           collapsable: false,
           sidebarDepth: 2,
-          //      children: [ '/src/ru/administration/README.html' ],
-          children: [
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/administration/configuration_files_ru.html']
-            },
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/install.html']
-            },
-          ]
+          children: ['/src/ru/install.html']
         },
         {
           title: 'Администрирование',
-          collapsable: false,
+          collapsable: true,
           sidebarDepth: 2,
-          //      children: [ '/src/ru/administration/README.html' ],
           children: [
             {
               collapsable: false,
               sidebarDepth: 2,
               children: ['/src/ru/administration/site_structure_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/administration/configuration_files_ru.html']
+            },
+          ]
+        },
+        {
+          title: 'Ручная инсталляция',
+          collapsable: true,
+          sidebarDepth: 2,
+          children: [
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/manual-install/prerequisites_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/manual-install/arguments_for_run_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/manual-install/deploy_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/manual-install/nginx_configuration_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/manual-install/systemDmounting_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/manual-install/step_by_step_server_installation_ru.html']
             }
           ]
         },
         {
           title: 'Разработка',
-          collapsable: false,
+          collapsable: true,
           sidebarDepth: 2,
           children: [
             {
@@ -74,43 +98,6 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 2,
               children: ['/src/ru/development/skins_ru.html']
-            },
-          ]
-        },
-        {
-          title: 'Ручная инсталляция',
-          collapsable: false,
-          sidebarDepth: 2,
-          children: [
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/installation/prerequisites_ru.html']
-            },
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/installation/arguments_for_run_ru.html']
-            },
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/installation/deploy_ru.html']
-            },
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/installation/nginx_configuration_ru.html']
-            },
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/installation/systemDmounting_ru.html']
-            },
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/installation/step_by_step_server_installation_ru.html']
             }
           ]
         }
