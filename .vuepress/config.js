@@ -11,19 +11,30 @@ module.exports = {
     sidebar:
       [
         {
-          collapsable: false,
-          sidebarDepth: 0,
-          children: ['/src/ru/']
-        },
-        {
-          collapsable: false,
-          sidebarDepth: 0,
-          children: ['/src/ru/about.html']
-        },
-        {
-          collapsable: false,
-          sidebarDepth: 0,
-          children: ['/src/ru/install.html']
+          title: 'База',
+          collapsable: true,
+          sidebarDepth: 2,
+          children: [
+            {
+              collapsable: false,
+              sidebarDepth: 0,
+              children: ['/src/ru/']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/about.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/install.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/license.html']
+            }]
         },
         {
           title: 'Администрирование',
