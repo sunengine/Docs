@@ -90,7 +90,7 @@ module.exports = {
             {
               collapsable: false,
               sidebarDepth: 2,
-              children: ['/src/ru/administration/systemDmounting_ru.html']
+              children: ['/src/ru/installation/systemDmounting_ru.html']
             },
             {
               collapsable: false,
