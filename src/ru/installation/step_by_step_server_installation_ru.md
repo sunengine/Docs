@@ -1,10 +1,10 @@
 # Пошаговое руководство по установке на Ubuntu сервер
 
-## Устанавливаем Asp.Net Core Runtime. 
+## Устанавливаем Asp.Net Core Runtime
 
 Ссылка на инструкцию.
 
-## Добавляем репозиторий:
+### Добавляем репозиторий
 
 ```
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -13,7 +13,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 ```
 
 
-## Устанавливаем:
+### Устанавливаем
 
 ```
 sudo add-apt-repository universe
@@ -29,56 +29,57 @@ sudo apt-get install aspnetcore-runtime-3.1
 Ссылка на инструкцию.
 
 
-## Устанавливаем:
+### Устанавливаем
 
 ```
 sudo apt-get install postgresql-11
 ```
 
+### Устанавливаем пароль для пользователя postgres
 
-## Устанавливаем пароль для пользователя:
+#### Открывается консоль `postgres`
 
 ```
 sudo -u postgres psql
 ```
 
-
-Открывается консоль `postgres`, набираем команду:
+#### Задаём пароль пользовател
 
 ```
 ALTER USER postgres PASSWORD 'postgres_user_password';
 ```
 
+Вместо `postgres_user_password` необходимо задать пароль
 
-Вместо `"postgres_user_password"` необходимо задать пароль.
-
-
-Cоздаём базу данных `"my_site.com"`
+### Cоздаём базу данных 
 
 ```
 CREATE DATABASE my_site.com;
 ```
 
+`my_site.com` - имя базы
 
 ## Собираем проект локально и записываем на сервер
 
 Скачиваем с репозитория код `SunEngine` на локальный компьютер.
 
-Все скрипты сборки и публикации находятся в директории `"Scripts/"`
+Все скрипты сборки и публикации находятся в директории `Scripts/`
 
-В директории `"Scripts/"` копируем файл `"PUBLISH.template"` в `"PUBLISH"` и редактируем его, настраивая все параметры
+В директории `Scripts/` копируем файл `PUBLISH.template` в `PUBLISH` и редактируем его, настраивая все параметры
 
-Собираем проект выполнив скрипт - `"build.sh"` (появится папка `"build"` в корневом каталоге проекта)
+Собираем проект выполнив скрипт - `build.sh` (появится папка `build` в корневом каталоге проекта)
 
-Создаём на сервере папку `"/site/my_site.com"`. Путь может быть любым.
+Создаём на сервере папку `/site/my_site.com`. Путь может быть любым.
 
-Выкладываем `"build"` на сервер, запуская скрипт `"publi.sh"`
+Выкладываем `build` на сервер, запуская скрипт `publi.sh`
 
-На сервере редактируем файлы настроек в директории  `"/site/my_site.com/Config"`
+На сервере редактируем файлы настроек в директории  `/site/my_site.com/Config`
 
 
 
-## Настройки подключения в "/Config/DataBaseConnection.json".
+## Настройки подключения в `DataBaseConnection.json`
+
+В файле `/Config/DataBaseConnection.json` необходимо указать имя базы данных, пользователя postgres и пароль.
 
 ```
 {
@@ -91,31 +92,26 @@ CREATE DATABASE my_site.com;
 ```
 
 
-Заполняем базу данных начальными данными
+## Заполняем базу данных начальными данными
 
-Заходим в папку `"/site/my_site.com/Server"`
-
-
-## Запускаем
+В папке `/site/my_site.com/Server` запускаем
 
 ```
 dotnet SunEngine.dll init migrate
 ```
 
-
 Эта команда создаёт таблицы и другие структуры в базе данных и заполняет начальными данными.
 
-Подробнее о командах `"dotnet SunEngine.dll"` в статье.
+Подробнее о командах `dotnet SunEngine.dll` в статье.
 
-Создаём `kestrel` процесс на `systemd`
+## Создаём kestrel сервис на systemd
 
 Ссылка на инструкцию.
-
 
 `systemd` позволяет после старта сервера постоянно держать необходимые процессы запущенными, и перезапускать, если они вынужденно выключаются.
 
 
-Создаём файл `"my_site.com.service"` в папке `"/etc/systemd/system"`
+Создаём файл `my_site.com.service` в папке `/etc/systemd/system`
 
 ```
   [Unit]
@@ -135,44 +131,40 @@ dotnet SunEngine.dll init migrate
   WantedBy=multi-user.target
 ```
 
-
-## Включаем процесс:
+### Включаем systemd сервис 
 
 ```
 systemctl enable my_site.com
 ```
 
+### Команды которые могут пригодиться
 
-## Команды которые могут пригодиться
+#### Посмотреть логи systemd процессв
 
-Посмотреть логи:
-
-```journalctl -fxeu my_site.com
+```
+journalctl -fxeu my_site.com
 ```
 
-
-Перезапуск процесса:
+#### Перезапуск процесса systemd
 
 ```
 systemctl restart my_site.com
 ```
 
-
-## Установка Nginx веб сервера
+## Конфигурация Nginx веб сервера
 
 Ссылка на инструкцию.
+
+### Устанавливаем `Nginx`
 
 ```
 sudo apt-get update
 sudo apt-get install nginx
 ```
 
+### Создание `Nginx` конфигурации
 
-Создание `Nginx` конфигурации
-
-Запуск на `Nginx`.
-
-Создаём файл `"/etc/nginx/sites-available/my_site.com"`
+Создаём файл `/etc/nginx/sites-available/my_site.com`
 
 ```
 server {
@@ -232,14 +224,14 @@ server { # редирект в случае входа через http
 ```
 
 
-Активизируем настройки my_site.com:
+### Активизируем настройки my_site.com
 
 ```
 sudo ln -s /etc/nginx/sites-available/my_site.com /etc/nginx/sites-enabled/my_site.com
 ```
 
 
-Перезагружаем настройки Nginx:
+### Перезагружаем настройки Nginx
 
 ```
 sudo systemctl reload nginx

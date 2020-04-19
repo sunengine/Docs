@@ -16,7 +16,7 @@ module.exports = {
         //    { title: 'English', collapsable: false, children: [ '/src/en/' ] },
         { //title: 'О проекте',
           collapsable: false,
-          sidebarDepth: 2,
+          sidebarDepth: 0,
           children: ['/src/ru/']
         },
         {
@@ -29,6 +29,11 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 2,
               children: ['/src/ru/administration/configuration_files_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
+              children: ['/src/ru/install.html']
             },
           ]
         },
@@ -75,6 +80,11 @@ module.exports = {
             {
               collapsable: false,
               sidebarDepth: 2,
+              children: ['/src/ru/installation/prerequisites_ru.html']
+            },
+            {
+              collapsable: false,
+              sidebarDepth: 2,
               children: ['/src/ru/installation/arguments_for_run_ru.html']
             },
             {
@@ -91,11 +101,6 @@ module.exports = {
               collapsable: false,
               sidebarDepth: 2,
               children: ['/src/ru/installation/systemDmounting_ru.html']
-            },
-            {
-              collapsable: false,
-              sidebarDepth: 2,
-              children: ['/src/ru/installation/prerequisites_ru.html']
             },
             {
               collapsable: false,
