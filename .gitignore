@@ -27,7 +27,7 @@ packages/@vuepress/shared-utils/lib/
 packages/@vuepress/shared-utils/types/
 
 # -- repo --
-public
+#public
 
 # -- Node --
 # Logs
