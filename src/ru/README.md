@@ -7,3 +7,5 @@
 Сайт: [https://sunengine.site](https://sunengine.site)
 
 Демо: [https://demo.sunengine.site](https://demo.sunengine.site)
+
+Автор проекта: [Дмитрий Полянин](https://sunengine.site/user/okeanij), Telegram: [@Okeanij](https://t.me/Okeanij)
