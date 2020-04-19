@@ -77,7 +77,7 @@ CREATE DATABASE my_site.com;
 
 
 
-## Настройки подключения в `DataBaseConnection.json`
+## Настройки подключения
 
 В файле `/Config/DataBaseConnection.json` необходимо указать имя базы данных, пользователя postgres и пароль.
 
