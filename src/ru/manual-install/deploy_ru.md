@@ -31,14 +31,14 @@
 
 ## Настройки скрипта: BUILD
 
-- `PROJECT_NAME="SunEngine"` - Имя проекта, используется для вывода в консоли
-- `PROJECT_ROOT="auto"`      - Путь к корневой директории проекта.
+- `PROJECT_NAME="SunEngine"` - имя проекта, используется для вывода в консоли
+- `PROJECT_ROOT="auto"`      - путь к корневой директории проекта.
                            Значение `auto`: текущая директория или директория выше определяется содержанием в директории файла `.SunEngineRoot`.
-- `SERVER_PATH="${PROJECT_ROOT}/Server"` - Путь к серверной части проекта (DotNet solution)
-- `CLIENT_PATH="${PROJECT_ROOT}/Client"` - Путь к клиентской части проекта (Quasar project)
-- `CONFIG_PATH="${PROJECT_ROOT}/Config"` - Путь к директории с конфигурацией проекта
-- `BUILD_PATH="${PROJECT_ROOT}/build"`   - Путь куда будет помещена результирующая сборка проекта
-- `NPM_UTIL="yarn"`                      - Установщик npm пакетов (yarn или npm)
+- `SERVER_PATH="${PROJECT_ROOT}/Server"` - путь к серверной части проекта (DotNet solution)
+- `CLIENT_PATH="${PROJECT_ROOT}/Client"` - путь к клиентской части проекта (Quasar project)
+- `CONFIG_PATH="${PROJECT_ROOT}/Config"` - путь к директории с конфигурацией проекта
+- `BUILD_PATH="${PROJECT_ROOT}/build"`   - путь куда будет помещена результирующая сборка проекта
+- `NPM_UTIL="yarn"`                      - установщик npm пакетов (yarn или npm)
 
 ## Установка на сервер
 
@@ -60,14 +60,14 @@
 
 ## Настройки скрипта: PUBLISH
 
-- `PROJECT_NAME="SunEngine Demo"`           - Имя проекта, используется для вывода в консоли
-- `LOCAL_BUILD_PATH="/path/to/local/build"` - Путь к директории build проекта, должен соответствовать `BUILD_PATH` из файла `BUILD`
-- `REMOTE_USER="username"`                  - Имя пользователя под которым будет производиться коннект к серверу
+- `PROJECT_NAME="SunEngine Demo"`           - имя проекта, используется для вывода в консоли
+- `LOCAL_BUILD_PATH="/path/to/local/build"` - путь к директории build проекта, должен соответствовать `BUILD_PATH` из файла `BUILD`
+- `REMOTE_USER="username"`                  - имя пользователя под которым будет производиться коннект к серверу
 - `REMOTE_HOST="111.111.111.111"`           - IP или домен хоста сервера
-- `REMOTE_DIRECTORY="/remote/dir/path"`     - Путь к директории на сервере куда будет осуществляться загрузка
-- `REMOTE_DIRECTORY_OWNER="www-data"`       - Пользователь которому принадлежит `REMOTE_DIRECTORY` на сервере
-- `REMOTE_DIRECTORY_GROUP="www-data"`       - Группа которой принадлежит `REMOTE_DIRECTORY` на сервере
-- `REMOTE_SYSTEMD_SERVICE_NAME="demo.sunengine.site"`  - Имя сервиса systemd для перезапуска после загрузки
+- `REMOTE_DIRECTORY="/remote/dir/path"`     - путь к директории на сервере куда будет осуществляться загрузка
+- `REMOTE_DIRECTORY_OWNER="www-data"`       - пользователь которому принадлежит `REMOTE_DIRECTORY` на сервере
+- `REMOTE_DIRECTORY_GROUP="www-data"`       - группа которой принадлежит `REMOTE_DIRECTORY` на сервере
+- `REMOTE_SYSTEMD_SERVICE_NAME="demo.sunengine.site"`  - имя сервиса `systemd` для перезапуска после загрузки
 
 
 ## Запись файлов конфигурации
@@ -75,7 +75,7 @@
 После построение `build.sh` и публикации `publi.sh`, необходимо настроить конфигурацию на сервере отредактировать файлы в директории `Config` на сервере, это делается один раз.
 Необходимо прописать правильные настройки базы данных в `DataBaseConnection.json`
 
-Остальные настройки - по необходимости.
+Остальные настройки по необходимости.
 
 Директория `Config/Init` служит для стартовой инициализации базы данных сайта - команда `dotnet SunEngine.dll init migrate`.
 
@@ -92,9 +92,9 @@
 
 ## Настройки скрипта: UPDATE
 
-- `PROJECT_NAME="SunEngine Demo"`   - Имя проекта, используется для вывода в консоли  
-- `PROJECT_ROOT="auto"`             - Путь к корневой директории проекта.  
+- `PROJECT_NAME="SunEngine Demo"`   - имя проекта, используется для вывода в консоли  
+- `PROJECT_ROOT="auto"`             - путь к корневой директории проекта.  
                                   Значение `auto`: текущая директория или директория выше определяется содержанием в директории файла `.SunEngineRoot`.
-- `BUILD_SCRIPT_PATH="./build.sh"`      - Путь к скрипту сборки  
-- `PUBLISH_SCRIPT_PATH="./publi.sh"`  - Путь к скрипту публикации
+- `BUILD_SCRIPT_PATH="./build.sh"`      - путь к скрипту сборки  
+- `PUBLISH_SCRIPT_PATH="./publi.sh"`  - путь к скрипту публикации
 
