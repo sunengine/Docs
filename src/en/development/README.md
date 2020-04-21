@@ -1,7 +1,7 @@
-### Разработка
+### Development
 
-[Directory_structure ru_RU](/src/ru/development/directory_structure_ru.html)
+[Directory_structure EN](/src/ru/development/directory_structure_en.html)
 
-[Run Development ru_RU](/src/ru/development/run_development_ru.html)
+[Run Development EN](/src/ru/development/run_development_en.html)
 
-[Skins ru_RU](/src/ru/development/skins_ru.html)
+[Skins EN](/src/ru/development/skins_en.html)

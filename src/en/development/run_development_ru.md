@@ -1,34 +1,34 @@
-# Запуск для development
+# Launch for development
 
-## Создать базу
+## Create a database
 
-Если в корне проекта нет директории `Config`, её нужно скопировать из `Config.dev.template`. Иначе говоря, необходимо в корне проекта создать директорию `Config` с тем же содержимым что и `Config.dev.template` в корне проекта.
+If there is no `Config` directory in the project root, you need to copy it from` Config.dev.template`. In other words, it is necessary to create a `Config` directory in the project root with the same contents as` Config.dev.template` in the project root.
 
-Создать базу данных `<data_base_name>` на любой совместимой субд и прописать настройки и строку подключения в файл `/SunEngine/Config/DataBaseConnection.json`.
-
-
-## Запуск из консоли
-
-В директории `SunEngine/Server/SunEngine.Cli`.
-
-Заполняем базу начальными данными `dotnet run migrate init seed` (если не сделано).
-
-Запускаем сервер командой `dotnet run server` в дирректории `SunEngine/Client`.
-
-Инсталлируем *npm*-модули `yarn install` или `npm install` (если не сделано).
-
-Запускаем клиент `quasar dev` - откроется браузер с сайтом.
+Create the database `<data_base_name>` on any compatible subdirectory and write the settings and connection string to the file `/ SunEngine / Config / DataBaseConnection.json`.
 
 
-## Запуск из Rider IDE 
+## Launch from the console
 
-При первом запуске необходимо выполнить пункты `1`, `2`, `4`, `7` (см. выше).
+In the directory `SunEngine / Server / SunEngine.Cli`.
 
-Серверная часть запускается стартом проекта `/Server/SunEngine.Cli`.
+Fill the database with the initial data `dotnet run migrate init seed` (if not done).
 
-Для запуска клиентской части, необходимо выполнить "Добавление клиента на панель" `Solution explorer` правым кликом мыши на `SunEngine Solution -> Add -> Attach Existing Folder ->` выбрать каталог `SunEngine/Client`.
+We start the server with the `dotnet run server` command in the` SunEngine / Client` directory.
 
-Далее открываем `npm` меню и выполняем:
-- на файле `package.json` правый клик мыши `Tools -> Show npm Scripts`;
-- клиентская часть запускается через *npm*-скрипт `dev run`.
+Install the * npm * modules `yarn install` or` npm install` (if not done).
+
+We start the client `quasar dev` - the browser with the site will open.
+
+
+## Launch from Rider IDE
+
+At the first start, it is necessary to carry out the items `1`,` 2`, `4`,` 7` (see above).
+
+The server part is started by the start of the `/ Server / SunEngine.Cli` project.
+
+To start the client part, you need to perform the “Add client to the panel” `Solution explorer` by right-clicking on the` SunEngine Solution -> Add -> Attach Existing Folder -> `select the directory` SunEngine / Client`.
+
+Next, open the `npm` menu and execute:
+- on the file `package.json`, right-click on the mouse` Tools -> Show npm Scripts`;
+- the client part is launched through the * npm * script `dev run`.
 

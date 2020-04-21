@@ -1,7 +1,7 @@
 # Administration
 
-[Configuration_files ru_RU](/src/ru/administration/configuration_files_ru.html)
+[Configuration_files EN](/src/ru/administration/configuration_files_en.html)
 
-[Site Structure ru_RU](/src/ru/administration/site_structure_ru.html)
+[Site Structure EN](/src/ru/administration/site_structure_en.html)
 
-[SystemDmounting ru_RU](/src/ru/administration/systemDmounting_ru.html)
+[SystemDmounting EN](/src/ru/administration/systemDmounting_en.html)

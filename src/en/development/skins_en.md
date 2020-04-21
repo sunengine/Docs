@@ -1,72 +1,72 @@
-# Темы оформления
+# Themes
 
-## Темы оформления
+## Themes
 
-Тема оформления (`Skin`) это `zip` архив содержащий файлы:
-- `styles.css` - основной файл темы; единственный файл подключаемый к сайту;
-- `info.json` - метаинформация о теме оформления (имя темы, автор, контакты автора, версия, ссылка на источник, описание);
-- `preview.png` - Превью скина в определённом формате;
-- `readme.md` - Информация о скине;
-- `styles.[scss|sass], *.[scss|sass]` Исходники стилей scss или sass.
+The theme (`Skin`) is a` zip` -archive containing files:
+- `styles.css` - the main theme file; the only file connected to the site;
+- `info.json` - meta-information about the design theme (topic name, author, author’s contacts, version, link to the source, description);
+- `preview.png` - Preview the skin in a specific format;
+- `readme.md` - Information about the skin;
+- `styles. [scss | sass], *. [scss | sass]` The sources of the scss or sass styles.
 
-Файлы изображений [если надо].
+Image files [if necessary].
 
-Файлы шрифтов [если надо].
+Font files [if necessary].
 
-Подчёркнутым шрифтом обозначены обязательные файлы.
+Underlined font indicates required files.
 
-## Пример исходника темы Default
+## Example theme source Default
 
-Репозиторий тем - https://github.com/sunengine/SunEngine.Skins.
+Theme repository - https://github.com/sunengine/SunEngine.Skins.
 
-Для установки темы оформления необходимо заархивировать все файлы директории (без самой директории) в `"zip"`-архив и закачать его с помощью диалога загрузки в панели администратора.
+To set the skin, you need to archive all the files in the directory (without the directory itself) in the `` zip '' archive and upload it using the download dialog in the admin panel.
 
 `preview.png`
 
-Скриншот экрана Demo сайта:
+Screenshot of Demo site screen:
 
-- разрешение 1200 x 600 px 
-- главная страница demo сайта
-- всё содержимое сайта - стандартно, включая меню
-- залогиненым под **Admin**.
+- resolution 1200 x 600 px
+- home page of the demo site
+- all site content - standard, including menu
+- logged in as **Admin**.
 
 `info.json`
 
 ```
 {
-  "Name": "SkinName",  // имя темы оформления (eng)
-  "Author": "AuthorName",  // имя автора
-  "Contacts": [  // контакты автора, могут быть любые строки, ссылки или email адреса
-    "https://t.me/AuthorName",  
-    "skype: AuthorSkype",
-    "author@email.com",
-  ],
-  "Version": 2.2,  // Версия темы
-  "SourceUrl": "https://github.com/sunengine/SunEngine.Skins/tree/master/TestSkin",   // Ссылка на репозиторий темы
-  "Description": "Description of SkinName"  // Описание темы
+"Name": "SkinName", // name of the skin (eng)
+   "Author": "AuthorName", // author name
+   "Contacts": [// contacts of the author, there can be any lines, links or email addresses
+     "https://t.me/AuthorName",
+     "skype: AuthorSkype",
+     "author@email.com",
+   ],
+   "Version": 2.2, // Theme version
+   "SourceUrl": "https://github.com/sunengine/SunEngine.Skins/tree/master/TestSkin", // Link to the topic repository
+   "Description": "Description of SkinName" // Topic description
 }
 ```
 
 
-## Частичные темы оформления
+## Partial Themes
 
-На сайт может быть установлено сколько угодно много частичных тем оформления.
+An arbitrary number of partial design themes can be installed on the site.
 
-Эти темы стилизуют какие-то отдельные компоненты сайта или набор компонентов.
+These themes stylize any particular site components or set of components.
 
-Например это может быть логотип сайта и другие элементы брендинга.
+For example, it may be a website logo and other branding elements.
 
-Частичная тема может содержать селекторы css которые нужны для кастомной стилизации и дизайна сайта.
+A partial theme may contain css selectors that are needed for custom styling and site design.
 
 
-Частичная тема оформления (`PartialSkins`) это "zip"-архив содержащий файлы:
+A partial theme (`PartialSkins`) is a zip archive containing files:
 
-Обязательные:
+Mandatory:
 
-`styles.css` - основной файл скина. Единственный файл подключаемый на сайт.
+`styles.css` - the main skin file. The only file to connect to the site.
 
-`info.json` - метаинформация о теме оформления (имя темы, автор, контакты автора, версия, ссылка на источник, описание).
+`info.json` - meta-information about the design theme (topic name, author, author’s contacts, version, link to the source, description).
 
-...и другие, которые не являются обязательными.
+...and others that are not mandatory.
 
-Файл `info.json` имеет ту же структуру, обязательным является только поле name. Остальные поля можно не задавать, если в этом нет необходимости.
+The file `info.json` has the same structure, only the name field is required. The remaining fields can be omitted if this is not necessary.

@@ -1,6 +1,5 @@
 # Configuration files
 
-
 ## Contents of the configuration directory
 
 Permanent settings
