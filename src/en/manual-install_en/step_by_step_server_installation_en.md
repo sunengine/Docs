@@ -1,10 +1,10 @@
-# Пошаговое руководство по установке на Ubuntu сервер
+# Ubuntu server walkthrough
 
-## Устанавливаем Asp.Net Core Runtime
+## Installing Asp.Net Core Runtime
 
-[Ссылка](https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-package-manager-ubuntu-1804#install-the-aspnet-core-runtime) на инструкцию.
+[Link](https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-package-manager-ubuntu-1804#install-the-aspnet-core-runtime) to instruction.
 
-### Добавляем репозиторий
+### Add repository
 
 ```
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -13,7 +13,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 ```
 
 
-### Устанавливаем
+### Install packages
 
 ```
 sudo add-apt-repository universe
@@ -24,46 +24,46 @@ sudo apt-get install aspnetcore-runtime-3.1
 ```
 
 
-## Устанавливаем PostgreSql
+## Install PostgreSql
 
-[Ссылка](https://www.postgresql.org/download/linux/ubuntu/) на инструкцию.
+[Link](https://www.postgresql.org/download/linux/ubuntu/) to manual.
 
 
-### Устанавливаем
+### PostgreSql one more package
 
 ```
 sudo apt-get install postgresql-11
 ```
 
-### Устанавливаем пароль для пользователя postgres
+### Set password for postgres user
 
-#### Открывается консоль `postgres`
+#### Postgres console opening
 
 ```
 sudo -u postgres psql
 ```
 
-#### Задаём пароль пользовател
+#### Set user password
 
 ```
 ALTER USER postgres PASSWORD 'postgres_user_password';
 ```
 
-Вместо `postgres_user_password` необходимо задать пароль
+Enter the password instead `postgres_user_password`
 
-### Cоздаём базу данных 
+### Create a database
 
 ```
 CREATE DATABASE my_site.com;
 ```
 
-`my_site.com` - имя базы
+`my_site.com` - database name
 
-## Собираем проект локально и записываем на сервер
+## We collect the project locally and write to the server
 
-Скачиваем с [репозитория](https://github.com/sunengine/SunEngine) код `SunEngine` на локальный компьютер.
+Clone the sources of `SunEngine` from official [repository](https://github.com/sunengine/SunEngine) to your computer.
 
-Все скрипты сборки и публикации находятся в директории `Scripts/`
+All build and publication scripts are located in the `Scripts/` directory
 
 В директории `Scripts/` копируем файл `PUBLISH.template` в `PUBLISH` и редактируем его, настраивая все параметры
 
