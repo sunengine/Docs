@@ -1,9 +1,9 @@
 module.exports = {
-    
+
   locales: {
     // The key is the path for the locale to be nested under.
     // As a special case, the default locale can use '/' as its path.
-    '/src/en/': {
+    '/': {
       lang: 'en-US', // this will be set as the lang attribute on <html>
       title: 'SunEngine Documentation',
       description: 'description in english'
@@ -16,10 +16,10 @@ module.exports = {
   },
   base: '/',
   dest: 'docs',
-  
+
   themeConfig: {
     locales: {
-      '/src/en/': {
+      '/': {
         // text for the language dropdown
         selectText: 'Lang',
         // label for this locale in the language dropdown
@@ -27,26 +27,26 @@ module.exports = {
         // Aria Label for locale in the dropdown
         ariaLabel: 'Lang',
         // text for the edit-on-github link
-//        editLinkText: 'Edit this page on GitHub',
+        //        editLinkText: 'Edit this page on GitHub',
         // config for Service Worker
-//         serviceWorker: {
-//           updatePopup: {
-//             message: "New content is available.",
-//             buttonText: "Refresh"
-//           }
-//         },
+        //         serviceWorker: {
+        //           updatePopup: {
+        //             message: "New content is available.",
+        //             buttonText: "Refresh"
+        //           }
+        //         },
         // algolia docsearch options for current locale
-//         algolia: {},
-//      nav: [
-//        { text: 'Nested', link: '/nested/' , ariaLabel: 'Nested' }
-//      ],
+        //         algolia: {},
+        //      nav: [
+        //        { text: 'Nested', link: '/nested/' , ariaLabel: 'Nested' }
+        //      ],
 
-        nav: [
-          { text: 'EN', link: '/src/en/' },
-          { text: 'RU', link: '/src/ru/' }
-        ],
+        // nav: [
+        //   { text: 'EN', link: '/src/en/' },
+        //   { text: 'RU', link: '/src/ru/' }
+        // ],
         sidebar: {
-          '/src/en/': [
+          '/': [
             {
               title: 'Base',
               collapsable: true,
@@ -151,7 +151,7 @@ module.exports = {
               ]
             }
           ],
-// '/nested/': [/* ... */]
+          // '/nested/': [/* ... */]
         }
       }, //                                                                  окончание ENGLISH
       '/src/ru/': {
@@ -162,23 +162,23 @@ module.exports = {
         // Aria Label for locale in the dropdown
         ariaLabel: 'Язык',
         // text for the edit-on-github link
-//        editLinkText: 'Edit this page on GitHub',
+        //        editLinkText: 'Edit this page on GitHub',
         // config for Service Worker
-//        serviceWorker: {
-//          updatePopup: {
-//            message: "New content is available.",
-//            buttonText: "Refresh"
-//          }
-//         },
+        //        serviceWorker: {
+        //          updatePopup: {
+        //            message: "New content is available.",
+        //            buttonText: "Refresh"
+        //          }
+        //         },
         // algolia docsearch options for current locale
-//        algolia: {},
-//      nav: [
-//        { text: 'Nested', link: '/nested/' , ariaLabel: 'Nested' }
-//      ],
-        nav: [
-          { text: 'EN', link: '/src/en/' },
-          { text: 'RU', link: '/src/ru/' }
-        ],
+        //        algolia: {},
+        //      nav: [
+        //        { text: 'Nested', link: '/nested/' , ariaLabel: 'Nested' }
+        //      ],
+        // nav: [
+        //   { text: 'EN', link: '/' },
+        //   { text: 'RU', link: '/src/ru/' }
+        // ],
         sidebar: {
           '/src/ru/': [
             {

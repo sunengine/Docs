@@ -102,7 +102,7 @@ dotnet SunEngine.dll init migrate
 
 Эта команда создаёт таблицы и другие структуры в базе данных и заполняет начальными данными.
 
-Подробнее о командах `dotnet SunEngine.dll` в статье.
+Подробнее о командах `dotnet SunEngine.dll` в [статье](/src/ru/manual-install_ru/arguments_for_run_ru.html).
 
 ## Создаём kestrel сервис на systemd
 
