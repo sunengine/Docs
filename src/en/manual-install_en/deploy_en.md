@@ -1,98 +1,98 @@
-# Установка на сервер
+# Deploy
 
-Все `.sh` скрипты находятся в директории `Scripts/`
-
-
-Для публикации на сервере необходимо выполнить следующие действия:
-
-- Запустить скрипт `build.sh`.
-- Подготовить параметры скрипта `publi.sh` переименовав `PUBLISH.template` в `PUBLISH` и отредактировать настройки в файле.
-- Запустить скрипт `publi.sh`.
+All `.sh` scripts is in `Scripts/`
 
 
-## Создание сборки
+To deploy to the server you must perform the following steps:
 
-### Скрипт build.sh
+- Run `build.sh` script.
+- Prepare the parameters for the `publi.sh` script by renaming` PUBLISH.template` to `PUBLISH` and edit the settings in the file.
+- Run `publi.sh` script.
 
-Скрипт работает из коробки.
 
-После запуска весь проект собирается в директорию `build`.
+## Creating Build
 
-Клиентская часть кладётся в `build/wwwroot`.
+### build.sh script
 
-Для настройки по умолчанию используется файл `BUILD`, либо укажите файл с настройками первым аргументом
+The script works out of the box.
+
+After starting the whole project is going to the `build` directory.
+
+The client part is placed in `build/wwwroot`.
+
+The default file is `BUILD`, or specify the settings file with the first argument
 
 ```
 "build.sh /path/to/BUILD_VARS"
 ```
 
 
-## Настройки скрипта BUILD
+## BUILD Script Settings
 
-- `PROJECT_NAME="SunEngine"` - имя проекта, используется для вывода в консоли
-- `PROJECT_ROOT="auto"`      - путь к корневой директории проекта.
-                           Значение `auto`: текущая директория или директория выше определяется содержанием в директории файла `.SunEngineRoot`.
-- `SERVER_PATH="${PROJECT_ROOT}/Server"` - путь к серверной части проекта (DotNet solution)
-- `CLIENT_PATH="${PROJECT_ROOT}/Client"` - путь к клиентской части проекта (Quasar project)
-- `CONFIG_PATH="${PROJECT_ROOT}/Config"` - путь к директории с конфигурацией проекта
-- `BUILD_PATH="${PROJECT_ROOT}/build"`   - путь куда будет помещена результирующая сборка проекта
-- `NPM_UTIL="yarn"`                      - установщик npm пакетов (yarn или npm)
+- `PROJECT_NAME="SunEngine"`             - the name of the project, used to display in the console
+- `PROJECT_ROOT="auto"`                  - path to the project root directory  
+The value of `auto`: the current directory or the directory above is determined by the contents in the directory of the `.SunEngineRoot` file  
+- `SERVER_PATH="${PROJECT_ROOT}/Server"` - path to the server part of the project (DotNet solution)
+- `CLIENT_PATH="${PROJECT_ROOT}/Client"` - the path to the client part of the project (Quasar project)
+- `CONFIG_PATH="${PROJECT_ROOT}/Config"` - the path to the directory with the project configuration
+- `BUILD_PATH="${PROJECT_ROOT}/build"`   - the path to which the resulting project assembly will be placed
+- `NPM_UTIL="yarn"`                      - installer of npm packages (yarn or npm)
 
-## Установка на сервер
 
-### Скрипт publi.sh
+## Installation on the server
 
-Перед запуском необходимо отредактировать параметры в `PUBLISH"` файле настроек скрипта.
+### Script publi.sh
 
-Скрипт `publi.sh` записывает директорию `build` на сервер, перезаписывая все файлы, а директорию `Config` записывает только если её ещё нет на сервере.
+Before starting, you need to edit the parameters in the `PUBLISH` script settings file.
 
-Для настройки по умолчанию используется файл `PUBLISH`, либо укажите файл с настройками первым аргументом
+The `publi.sh` script writes the` build` directory to the server, overwriting all the files, and the `Config` directory writes only if it is not already on the server.
+
+The default file is `PUBLISH`, or specify the settings file with the first argument
 
 ```
 "publi.sh /path/to/PUBLISH_VARS"
 ```
 
-
-Для того что бы скрипт смог полностью отработать пользователю `username` на сервере (под которым работает скрипт)  надо добавить в группы `www-data`, `systemd-journal`, `systemd-network`, `systemd-network`, `systemd-resolve`. Это можно сделать отредактировав файл `/etc/group`.
-
-
-## Настройки скрипта PUBLISH
-
-- `PROJECT_NAME="SunEngine Demo"`           - имя проекта, используется для вывода в консоли
-- `LOCAL_BUILD_PATH="/path/to/local/build"` - путь к директории build проекта, должен соответствовать `BUILD_PATH` из файла `BUILD`
-- `REMOTE_USER="username"`                  - имя пользователя под которым будет производиться коннект к серверу
-- `REMOTE_HOST="111.111.111.111"`           - IP или домен хоста сервера
-- `REMOTE_DIRECTORY="/remote/dir/path"`     - путь к директории на сервере куда будет осуществляться загрузка
-- `REMOTE_DIRECTORY_OWNER="www-data"`       - пользователь которому принадлежит `REMOTE_DIRECTORY` на сервере
-- `REMOTE_DIRECTORY_GROUP="www-data"`       - группа которой принадлежит `REMOTE_DIRECTORY` на сервере
-- `REMOTE_SYSTEMD_SERVICE_NAME="demo.sunengine.site"`  - имя сервиса `systemd` для перезапуска после загрузки
+In order for the script to be able to fully work out the user `username` on the server (under which the script runs), add `www-data`, `systemd-journal`,` systemd-network`, `systemd-network`, `systemd -resolve`. This can be done by editing the file `/etc/group`.
 
 
-## Запись файлов конфигурации
+## PUBLISH script settings
 
-После построение `build.sh` и публикации `publi.sh`, необходимо настроить конфигурацию на сервере отредактировать файлы в директории `Config` на сервере, это делается один раз.
-Необходимо прописать правильные настройки базы данных в `DataBaseConnection.json`
-
-Остальные настройки по необходимости.
-
-Директория `Config/Init` служит для стартовой инициализации базы данных сайта - команда `dotnet SunEngine.dll init migrate`.
-
-## Обновление `SunEngine` на сервере до последней версии с репозитория `GitHub`
-
-### Скрипт: update.sh
-
-Скрипт работает из коробки при условии настроенного `publi.sh` скрипта.
-
-Скрипт берёт последнюю версию из мастер ветки репозитория, перезатирая всё что было раньше кроме `Config`
-
-И последовательно запускает `build.sh` и `publi.sh` скрипты.
+- `PROJECT_NAME="SunEngineDemo"`            - the name of the project, used to display in the console
+- `LOCAL_BUILD_PATH="/path/to/local/build"` - the path to the build directory of the project, must match the `BUILD_PATH` from the file `BUILD`
+- `REMOTE_USER="username"`                  - username under which the connection to the server will be made
+- `REMOTE_HOST="111.111.111.111"`           - IP or domain of the server host
+- `REMOTE_DIRECTORY="/remote/dir/path"`     - the path to the directory on the server where the download will be performed
+- `REMOTE_DIRECTORY_OWNER="www-data"`       - the user who owns `REMOTE_DIRECTORY` on the server
+- `REMOTE_DIRECTORY_GROUP="www-data"`       - the group of which belongs to `REMOTE_DIRECTORY` on the server
+- `REMOTE_SYSTEMD_SERVICE_NAME="demo.sunengine.site"` - the name of the service `systemd` to restart after loading
 
 
-## Настройки скрипта UPDATE
+## Writing configuration files
 
-- `PROJECT_NAME="SunEngine Demo"`   - имя проекта, используется для вывода в консоли  
-- `PROJECT_ROOT="auto"`             - путь к корневой директории проекта.  
-                                  Значение `auto`: текущая директория или директория выше определяется содержанием в директории файла `.SunEngineRoot`.
-- `BUILD_SCRIPT_PATH="./build.sh"`      - путь к скрипту сборки  
-- `PUBLISH_SCRIPT_PATH="./publi.sh"`  - путь к скрипту публикации
+After building `build.sh` and publishing `publi.sh`, you need to configure the server to edit the files in the `Config` directory on the server, this is done once.
+It is necessary to register the correct database settings in `DataBaseConnection.json`
+
+Other settings as needed.
+
+The `Config/Init` directory is used to start initializing the site database - the `dotnet SunEngine.dll init migrate` command.
+
+## Upgrading `SunEngine` on the server to the latest version from the` GitHub` repository
+
+### Script: update.sh
+
+The script works out of the box provided the `publi.sh` script is configured.
+
+The script takes the latest version from the master branch of the repository, overwriting everything that was before except for `Config`
+
+And sequentially runs `build.sh` and `publi.sh` scripts.
+
+
+## UPDATE script settings
+
+- `PROJECT_NAME="SunEngineDemo"`     - the name of the project, used to display in the console
+- `PROJECT_ROOT="auto"`              - the path to the root directory of the project
+The value of `auto`: the current directory or the directory above is determined by the contents in the directory of the `.SunEngineRoot` file.  
+- `BUILD_SCRIPT_PATH="./build.sh"`   - the path to the build script
+- `PUBLISH_SCRIPT_PATH="./publi.sh"` - the path to the publication script
 

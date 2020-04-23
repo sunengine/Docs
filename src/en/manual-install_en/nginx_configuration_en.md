@@ -1,6 +1,6 @@
-# Конфигурация Nginx
+# Nginx configuration
 
-Серверная и клиентская части запускаются на разных конечных точках, например клиентская часть `mysite.site`, серверная часть `mysite.site/api`.
+The server and client parts are launched at different endpoints, for example, the client part of `mysite.site` and the server part of `mysite.site/api`.
 
 ## HTTP2 + HTTPS
 
@@ -13,10 +13,10 @@ server {
 
     charset utf-8;
 
-    ssl on;    # включаем ssl
-    ssl_certificate /etc/ssl/mysite.site/mysite.ite.srt;         # Путь к ssl сертификату
-    ssl_certificate_key /etc/ssl/mysite.site/mysite.site.key;    # Путь к ключу сертификата 
-    gzip on;   # включаем gzip архивацию потока данных
+    ssl on;    # turn on ssl
+    ssl_certificate /etc/ssl/mysite.site/mysite.ite.srt;         # Path to ssl sertivicate
+    ssl_certificate_key /etc/ssl/mysite.site/mysite.site.key;    # Path to ssl sertivicate's key
+    gzip on;   # turn on gzip data flow
 
     gzip_buffers 16 8k;
     gzip_comp_level 6;
@@ -33,28 +33,28 @@ server {
     add_header X-XSS-Protection "1; mode=block";
     add_header X-Content-Type-Options "nosniff";
 
-    # Endpoint для клиентской части
+    # Endpoint for the client
     location / {   
        root /site/mysite.site/wwwroot;
-       try_files $uri $uri/ /index.html;   # если файл не найден - возвращаем index.html
+       try_files $uri $uri/ /index.html;   # if the file is not found, return index.html
 
-       open_file_cache max=1000 inactive=20s; # кеширование файлов клиента на сервере
+       open_file_cache max=1000 inactive=20s; # caching client files on the server
        open_file_cache_valid 30s;
        open_file_cache_min_uses 2;
        open_file_cache_errors on;
 
-       # кеширование в браузере
+       # browser caching
        location ~ \.(js|json|css|svg|svgz|eot|otf|woff|woff2|ttf|rss|atom|ico|jpg|jpeg|gif|png)$ {
-           expires 14d; # хранить кеш 14 дней
+           expires 14d; # keep cache for 14 days
        }
     }
-    # Endpoint для серверной части. Работает как reverse proxy отправляя запросы в Kestrel работающим отдельным процессом.
+    # Endpoint for the server side. Works as a reverse proxy by sending requests to Kestrel as a separate process.
     location /api/ {   
-           proxy_pass http://localhost:5000/; # Порт должен соответствовать настройкам kestrel в SunEngine.json
-           client_max_body_size 11M;  # максимальный размер тела запроса, который допускает Nginx ~= максимальный размер для upload файла
+           proxy_pass http://localhost:5000/; # The port must match the kestrel settings in SunEngine.json
+           client_max_body_size 11M;  # maximum request body size that Nginx allows ~ = maximum size for upload file
     }
 
-server {  # редирект в случае входа через http
+server {  # redirect in case of login via http
     listen 80;
     listen [::]:80;
 
@@ -64,24 +64,24 @@ server {  # редирект в случае входа через http
 ```
 
 
-Для работы необходимо запустить `Kestrel` сервис отдельным процессом.
+To work, you need to start the `Kestrel` service as a separate process.
 
-Инструкция в [статье](https://kimsereyblog.blogspot.com/2018/05/manage-kestrel-process-with-systemd.html).
+[Instructions in the article](https://kimsereyblog.blogspot.com/2018/05/manage-kestrel-process-with-systemd.html).
 
 
-Порт Kestrel в `/Config/SunEngine.json` должен совпадать с портом конфигурации в `nginx`.
+The Kestrel port in `/Config/SunEngine.json` must match the configuration port in `nginx`.
 
 
 ## HTTP
 
-Использовать только для целей разработки или тестирования. Не использовать на `production`.
+Use only for development or testing purposes. Do not use on `production`.
 
 ```
 server {
-    listen 80; # http порт
+    listen 80; # http port
     listen [::]:80;
 
-    server_name mysite.site; # домен
+    server_name mysite.site; # domen
          
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
@@ -89,17 +89,17 @@ server {
      
     charset utf-8;
          
-    # Endpoint для клиентской части
+    # Endpoint for the client
     location / {   
        root /site/mysite.site/wwwroot;
-       try_files $uri $uri/ /index.html;   # если файл не найден - возвращаем index.html
+       try_files $uri $uri/ /index.html;   # if the file is not found, return index.html
      }
 
-    # Endpoint для серверной части. Работает как  reverse proxy отправляя запросы в Kestrel работающий отдельным процессом.  
+    #   Endpoint for the server side. Works as a reverse proxy by sending requests to Kestrel running as a separate process.
     location /api/ {   
-       proxy_pass  http://localhost:5000/;   # Порт должен соответствовать настройкам kestrel в "/Config/SunEngine.json"
+       proxy_pass  http://localhost:5000/;   # The port must match the kestrel settings in "/Config/SunEngine.json"
             
-       client_max_body_size 11M;  # максимальный размер тела запроса, который допускает Nginx ~= максимальный размер для upload файла  
+       client_max_body_size 11M;  #   maximum request body size that Nginx allows ~= maximum size for upload file
     }
 }
 ```

@@ -65,21 +65,21 @@ Clone the sources of `SunEngine` from official [repository](https://github.com/s
 
 All build and publication scripts are located in the `Scripts/` directory
 
-В директории `Scripts/` копируем файл `PUBLISH.template` в `PUBLISH` и редактируем его, настраивая все параметры
+In the `Scripts/` directory, copy the file `PUBLISH.template` to` PUBLISH` and edit it, setting all the parameters
 
-Собираем проект выполнив скрипт - `build.sh` (появится папка `build` в корневом каталоге проекта)
+We assemble the project by executing the script - `build.sh` (the folder` build` appears in the root directory of the project)
 
-Создаём на сервере папку `/site/my_site.com`. Путь может быть любым.
+Create the `/site/my_site.com` folder on the server. The path can be any.
 
-Выкладываем `build` на сервер, запуская скрипт `publi.sh`
+We put `build` on the server, running the script` publi.sh`
 
-На сервере редактируем файлы настроек в директории  `/site/my_site.com/Config`
+On the server, edit the configuration files in the directory `/site/my_site.com/Config`
 
 
 
-## Настройки подключения
+## Connection settings
 
-В файле `/Config/DataBaseConnection.json` необходимо указать имя базы данных, пользователя postgres и пароль.
+In the file `/Config/DataBaseConnection.json` you must specify the database name, user postgres and password.
 
 ```
 {
@@ -92,26 +92,27 @@ All build and publication scripts are located in the `Scripts/` directory
 ```
 
 
-## Заполняем базу данных начальными данными
+## Fill the database with initial data
 
-В папке `/site/my_site.com/Server` запускаем
+In the directory `/site/my_site.com/Server` run
 
 ```
 dotnet SunEngine.dll init migrate
 ```
 
-Эта команда создаёт таблицы и другие структуры в базе данных и заполняет начальными данными.
+This commandline creates tables and other structures in the database and fills with the initial data.
 
-Подробнее о командах `dotnet SunEngine.dll` в статье.
-
-## Создаём kestrel сервис на systemd
-
-[Ссылка](https://kimsereyblog.blogspot.com/2018/05/manage-kestrel-process-with-systemd.html) на инструкцию.
-
-`systemd` позволяет после старта сервера постоянно держать необходимые процессы запущенными, и перезапускать, если они вынужденно выключаются.
+Read more about the `dotnet SunEngine.dll` commands in this article.
 
 
-Создаём файл `my_site.com.service` в папке `/etc/systemd/system`
+## Create a kestrel service on systemd
+
+[Link](https://kimsereyblog.blogspot.com/2018/05/manage-kestrel-process-with-systemd.html) to instruction.
+
+`systemd` allows after the server starts to constantly keep the necessary processes running, and restart if they are forced to turn off.
+
+
+Create the file `my_site.com.service` in `/etc/systemd/system` directory
 
 ```
   [Unit]
@@ -131,55 +132,55 @@ dotnet SunEngine.dll init migrate
   WantedBy=multi-user.target
 ```
 
-### Включаем systemd сервис 
+### Enable systemd service
 
 ```
 systemctl enable my_site.com
 ```
 
-### Команды которые могут пригодиться
+### Commandlines to hack
 
-#### Посмотреть логи systemd процессв
+#### Check the systemd process logs
 
 ```
 journalctl -fxeu my_site.com
 ```
 
-#### Перезапуск процесса systemd
+#### Restart systemd process
 
 ```
 systemctl restart my_site.com
 ```
 
-## Конфигурация Nginx веб сервера
+## Configuration Nginx
 
-[Ссылка](https://kimsereyblog.blogspot.com/2018/06/asp-net-core-with-nginx.html) на инструкцию.
+[Link](https://kimsereyblog.blogspot.com/2018/06/asp-net-core-with-nginx.html) to instruction.
 
-### Устанавливаем `Nginx`
+### Installing Nginx 
 
 ```
-sudo apt-get update
-sudo apt-get install nginx
+sudo apt update && sudo apt full-upgrade
+sudo apt install nginx
 ```
 
-### Создание `Nginx` конфигурации
+### Creating configuration of Nginx
 
-Создаём файл `/etc/nginx/sites-available/my_site.com`
+First create the file `/etc/nginx/sites-available/my_site.com` and fill it with
 
 ```
 server {
     listen 443 http2; # https port
     listen [::]:443 http2; # IP v6
 
-    server_name my_site.site; # домен
+    server_name my_site.site; # domen
 
     charset utf-8;
 
-    ssl on; # включаем ssl
-    ssl_certificate /etc/ssl/mysite.site/my_site.com.crt; # Путь к ssl сертификату
-    ssl_certificate_key /etc/ssl/mysite.site/my_site.com.key; # Путь к ключу сертификата
+    ssl on; # turn on ssl
+    ssl_certificate /etc/ssl/mysite.site/my_site.com.crt; # path to ssl sertificate
+    ssl_certificate_key /etc/ssl/mysite.site/my_site.com.key; # path to ssl sertificates key
 
-    gzip on; # включаем gzip архивацию потока данных
+    gzip on; # enable gzip flow archiving
     gzip_buffers 16 8k;
     gzip_comp_level 6;
     gzip_http_version 1.1;
@@ -195,27 +196,27 @@ server {
     add_header X-XSS-Protection "1; mode=block";
     add_header X-Content-Type-Options "nosniff";
 
-    location / { # Endpoint для клиентской части
+    location / { # Endpoint to frontend
         root /site/my_site.com/wwwroot;
-        try_files $uri $uri/ /index.html; # если файл не найден - возвращаем index.html
+        try_files $uri $uri/ /index.html; # if the file is not found return index.html
 
-        open_file_cache max=1000 inactive=20s; # кеширование файлов клиента на сервере
+        open_file_cache max=1000 inactive=20s; # caching client files on the server
         open_file_cache_valid 30s;
         open_file_cache_min_uses 2;
         open_file_cache_errors on;
     }
 
-    location ~ \.(js|json|css|svg|svgz|eot|otf|woff|woff2|ttf|rss|atom|ico|jpg|jpeg|gif|png)$ {     # кеширование в браузере
-        expires 14d; # хранить кеш 14 дней
+    location ~ \.(js|json|css|svg|svgz|eot|otf|woff|woff2|ttf|rss|atom|ico|jpg|jpeg|gif|png)$ { # browser caching
+        expires 14d; # keep cache for 14 days
     }
 
-    location /api/ { # Endpoint для серверной части. Работает как reverse proxy отправляя запросы в Kestrel работающим отдельным процессом.
-        proxy_pass http://localhost:5000/; # Порт должен соответствовать настройкам kestrel в "Config/SunEngine.json"
-        client_max_body_size 11M; # максимальный размер тела запроса, который допускает Nginx ~= максимальный размер для upload файла
+    location /api/ { # Endpoint to backend. Works as a reverse proxy by sending requests to Kestrel as a separate process.
+        proxy_pass http://localhost:5000/; # The port must match the settings kestrel in "Config/SunEngine.json"
+        client_max_body_size 11M; # maximum request body size that Nginx allows ~= maximum size for upload file
     }
 }
 
-server { # редирект в случае входа через http
+server { # redirect in case of login via http
     listen 80;
     listen [::]:80;
     server_name mysite.site;
@@ -224,14 +225,14 @@ server { # редирект в случае входа через http
 ```
 
 
-### Активизируем настройки my_site.com
+### Activate my_site.com settings
 
 ```
 sudo ln -s /etc/nginx/sites-available/my_site.com /etc/nginx/sites-enabled/my_site.com
 ```
 
 
-### Перезагружаем настройки Nginx
+### Reload Nginx Settings
 
 ```
 sudo systemctl reload nginx
