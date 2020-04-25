@@ -76,8 +76,9 @@
 
 - Сделано с любовью ❤
 - Качественный код и архитектура
-- [План развития проекта](https://sunengine.site/texts/roadmap)
 - [Исходник на GitHub](https://github.com/sunengine/SunEngine)
 
+### Контакты
 
-
+- Дмитрий Полянин telegram: [@Okeanij](https://t.me/Okeanij)
+- SunEngine telegram группа: [@SunEngine](https://t.me/SunEngine)

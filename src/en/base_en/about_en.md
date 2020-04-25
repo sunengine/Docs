@@ -8,7 +8,7 @@
  - Creating a user profile on the site  
  - User’s personal account with the ability to edit user information and personal data  
  - Administration through the admin panel  
- - Ability to create and modify skins for the site, a choice of [already done skins](https://github.com/sunengine/SunEngine.Skins).  
+ - Ability to create and modify skins for the site, a choice of [already done skins](https://github.com/sunengine/Skins).  
 
 ### Thoughtful and friendly interface
  - A one-page application with a modern and beautiful interface.  
@@ -56,14 +56,14 @@ The project based on modern front edge technologies:
 
 ### Hosting
  - Linux or Windows server  
- - Bash scripts to build, deploy and update  
- - [Installation Guide for Ubuntu 18.04 Server (Russian)](https://sunengine.site/install/14)    
+ - Bash scripts to install, build, deploy and update     
 
 ### Additionally
  - Made with love ❤  
  - Quality code and architecture.  
- - [Road map (Russian)](https://sunengine.site/texts/roadmap).    
+ - [GitHub Source](https://github.com/sunengine/SunEngine)
 
 ### Contacts
- - Dmitrij Polianin telegram: [@Okeanij](https://t.me/Okeanij)    
- - SunEngine telegram group: [@SunEngine](https://t.me/SunEngine)  
+
+- Dmitrij Polianin telegram: [@Okeanij](https://t.me/Okeanij)
+- SunEngine telegram group: [@SunEngine](https://t.me/SunEngine)

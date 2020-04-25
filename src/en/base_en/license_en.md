@@ -1,42 +1,36 @@
-# License
-## SunEngine License
-
-**Version 1.2.2**
+# SunEngine Licence
+## SunEngine Licence
+**Version 1.2.2**  
   
-Author: Dmitry Polianin (c)  
-All rights to the SunEngine project code belong to the author of the project.
+Project author: Dmitrij Polianin  
+All rights to the SunEngine project code belong to the author of the project.  
 
-### Using SunEngine as is
+### Using SunEngine As-Is
+1. SunEngine is allowed to be used without payment for commercial and non-commercial projects, if the SunEngine code keep unchanged.
 
-1. SunEngine is allowed to be used without payment for commercial and non-commercial projects, provided that the SunEngine code is kept unchanged.
+### Changing and updating code
+2. The developer is allowed to change and complement the SunEngine code in personal and private use (*), with the exceptions:  
+  2.1. It is forbidden to change the license.  
+  2.2. It is forbidden to change the banner, the transcript is in paragraph 3.  
 
-### Change and addition of code
+Updated code allowed to be used without payment for commercial and non-commercial projects.
+        
+(*) Personal and private use of the project means that the developer makes the project for himself or for the customer, without replication at open sources and/or without mass replication.   
 
-2. The developer is allowed to change and supplement the SunEngine code, subject to exclusively personal and private use of the project (*), with the exception of exceptions:  
-   2.1. It is forbidden to change the license.  
-   2.2. It is forbidden to change the banner, the transcript in paragraph 3.
-   
-The changed code can be used without payment for commercial and non-commercial projects.
-  
-(*) Personal and private use of the project means that the developer makes the project for himself or for the customer, without mass replication and / or replication in open sources.
+### SunEngine link block at site footer
+3. On any changes of site footer block with "SunEngine" link have to stay:  
+  3.1. All link block have to be visible to site users.  
+  3.2. Code, look and placement of link block have to be unchanged.   
+  3.3. Link have to stay indexed by search engines.   
 
-### Banner "SunEngine" in the footer of the site
-
-3. For any changes, it is necessary to leave a banner link to the official website of the project (https://sunengine.site) in the footer of the site on all pages:  
-   3.1. The link should remain visible to site visitors.  
-   3.2. The code, appearance and location of the entire link block should remain unchanged.  
-   3.3. The link should remain indexable for search engines.
-
-### Distribution of SunEngine and related code
-
-4. SunEngine and any connected code is allowed to be distributed through open sources with the consent of the author of the project and is prohibited without the consent of the author of the project.
+### Sharing SunEngine and related code
+4. SunEngine and all related code can be shared in public only with author of SunEngine acceptance, and disallowed with out it.
 
 ### Rights to the code received in the project through commits, pull requests, or in other ways
+5. The author of the contribution to the code has the right to use his code at his discretion, without restrictions.
+6. A copy of the code received in the SunEngine repository is donated to the author of SunEngine and can be used by him at his discretion without restrictions.
 
-5. The author of the contribution to the code has the right to use his copyright code at his discretion, without restrictions.
-6. A copy of the code received in the SunEngine repository is donated to the author of the SunEngine project and can be used by him at his discretion without restrictions.
-
-### Denial of responsibility
-
-7. The SunEngine code is provided as is without any warranty or obligation on the part of the author or the SunEngine team.
-8. The author and SunEngine development team are not responsible for any direct or indirect consequences of using SunEngine or its code, including possible damage.
+### Disclaimer
+7. The SunEngine code provided as is without any warranty or obligation by SunEngine author or team.
+8. The SunEngine author and team is not responsible for any direct or indirect consequences of SunEngine or it's code use including possible damage.
+ 
