@@ -3,7 +3,7 @@
 
 **Version 1.2.2**
   
-Author: Dmitry Polyanin (s)  
+Author: Dmitry Polianin (c)  
 All rights to the SunEngine project code belong to the author of the project.
 
 ### Using SunEngine as is
