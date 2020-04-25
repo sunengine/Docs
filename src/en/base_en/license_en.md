@@ -1,6 +1,7 @@
-# License of SunEngine
+# License
+## SunEngine License
 
-** Version 1.2.2 **
+**Version 1.2.2**
   
 Author: Dmitry Polyanin (s)  
 All rights to the SunEngine project code belong to the author of the project.
