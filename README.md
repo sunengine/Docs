@@ -10,7 +10,7 @@ features:
 - title: Flexible role settings
   details: The ability to flexibly configure the rights of user groups for each section of the site
 - title: Functional Admin
-  details: Ability to create blogs, forums, articles sections; Creating subsections - interactive editing of site menu, as well as additional menus, switch basic and additional skins, user groups and changing their permissions, creating site activities Sections, and other features...
+  details: Ability to create blogs, forums, articles sections; Creating subsections - interactive editing of site menu, as well as additional menus, switch basic and additional skins, user groups and changing their permissions, creating site activities Sections, and other features
 footer: Copyright © Dmitrij Polianin
 ---
 
@@ -28,26 +28,6 @@ footer: Copyright © Dmitrij Polianin
  - A one-page application with a modern and beautiful interface.  
  - Works on personal computers, tablets, mobile phones.  
  - In the future, possibility to compile as a native application of Android, iOS, Windows and Linux.  
-
-### Quick and fast
- - A one-page application loads only what you need, without unnecessary requests (SPA).      
- - Quick access to data based on linq2db.   
- - Efficient and custom caching.  
-
-### Flexible role settings
- - The ability to flexibly configure the rights of user groups for each section of the site.  
-
-### Functional Admin
- - Ability to create  
-   - Blogs  
-   - Forums  
-   - Articles sections  
-   - Creating subsections  
- - Interactive editing of site menu, as well as additional menus  
- - Switch basic and additional skins  
- - User groups and changing their permissions  
- - Creating site activities Sections  
- - And other features...  
 
 ### Technologies
 The project based on modern front edge technologies:
