@@ -227,7 +227,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Ручная инсталляция',
+              title: 'Ручная установка',
               collapsable: true,
               sidebarDepth: 2,
               children: [
