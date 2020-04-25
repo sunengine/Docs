@@ -72,13 +72,7 @@
 - Linux или Windows сервер
 - Bash скрипты для сборки, установки и обновления
     
-### Дополнительно
+### Высокое качество
 
 - Сделано с любовью ❤
 - Качественный код и архитектура
-- [Исходник на GitHub](https://github.com/sunengine/SunEngine)
-
-### Контакты
-
-- Дмитрий Полянин telegram: [@Okeanij](https://t.me/Okeanij)
-- SunEngine telegram группа: [@SunEngine](https://t.me/SunEngine)

@@ -58,10 +58,15 @@ The project based on modern front edge technologies:
  - Linux or Windows server  
  - Bash scripts to install, build, deploy and update     
 
-### Additionally
+### High quality
  - Made with love ❤  
  - Quality code and architecture.  
- - [GitHub Source](https://github.com/sunengine/SunEngine)
+
+### Links
+
+- GitHub - https://github.com/sunengine/SunEngine
+- Russian Site - https://sunengine.site
+- Demo site - https://demo.sunengine.site
 
 ### Contacts
 
