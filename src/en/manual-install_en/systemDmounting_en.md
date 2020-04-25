@@ -4,7 +4,7 @@ The `systemd` service in Linux allows you to constantly keep the necessary proce
 
 ## Creating a configuration file for my_site.com in systemd
 
-The setup begins by creating the file `my_site.com.service` in the directory` / etc / systemd / system` and adding the corrected content for it to your situation:
+The setup begins by creating the file `my_site.com.service` in the directory `/etc/systemd/system` and adding the corrected content for it to your situation:
 
 ```
   [Unit]
@@ -27,11 +27,11 @@ The setup begins by creating the file `my_site.com.service` in the directory` / 
 
 The service must first be initialized in the system:
 
-`` `systemctl enable my_site.com```
+```systemctl enable my_site.com```
 
 and the next step is to run:
 
-`` `systemctl start my_site.com```
+```systemctl start my_site.com```
 
 Now the `SunEngine.dll server` will work in continuous mode. If the server operating system is restarted, the service will start when it is restarted.
 

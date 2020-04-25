@@ -4,7 +4,6 @@ All `.sh` scripts is in `Scripts/`
 
 
 To deploy to the server you must perform the following steps:
-
 - Run `build.sh` script.
 - Prepare the parameters for the `publi.sh` script by renaming` PUBLISH.template` to `PUBLISH` and edit the settings in the file.
 - Run `publi.sh` script.

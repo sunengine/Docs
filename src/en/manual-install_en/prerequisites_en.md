@@ -1,6 +1,6 @@
 # Requirements to run
 
-`SunEngine` runs on` Windows`, `Linux` and` MacOs`.
+`SunEngine` runs on` Windows`, `Linux` and` MacOSX`.
 
 It is recommended to use `Linux` as the server operating system.
 

@@ -2,18 +2,18 @@
 
 ## Source code directory structure
 
-- `bin /` building a server project when starting from the IDE
+- `bin /` building a server project when starting from the IDE  
   ...
-- `build /` build with build.sh
+- `build /` build with build.sh  
   ...
-- `Server / DotNet project server source code
+- `Server / DotNet project server source code  
   ...
 
 - `Client /` Quasar client source code
 
   - `src / statics /` static Quasar files
     - `skins /` site themes
-    - `PartialSkins /` partial site themes
+    - `PartialSkins /` partial site themes  
     ...
   - `config.js` file of the client config; at server startup, it is overwritten every time
   - `custom.js` file of custom scripts on the site, you can edit it through the admin panel
@@ -26,11 +26,11 @@
   - `LogConfig.json` server logging settings
   - `SunEngine.json` project path settings, and other project start-up settings
   - `ServerInfo.json` server information to display on the information page in the admin panel
-- `Config.dev.template /` configuration template for developers
+- `Config.dev.template /` configuration template for developers  
   ...
-- `Config.server.template /` configuration template for application on the server
+- `Config.server.template /` configuration template for application on the server  
   ...
-- `Resources /` server resource files
+- `Resources /` server resource files  
   ...
 - `Scripts /` Bash scripts for assembly and publication
   - `BUILD` Script build.sh settings
@@ -39,7 +39,7 @@
   - `PUBLISH.template` template settings publi.sh script
   - `publi.sh` project publishing script
   - `UPDATE` script update.sh settings
-  - `update.sh` update script from the official repository, all data will be overwritten
+  - `update.sh` update script from the official repository, all data will be overwritten  
     ...
 - `SunEngine.md` file defining the project root directory
 
@@ -51,14 +51,14 @@ Standard build directory of the `build` project
 Obtained using the `build.sh` script with the default settings.
 
 - `Server /` DotNet project server code
-  - `SunEngine.dll` project startup file
+  - `SunEngine.dll` project startup file  
   ...
 
 - `wwwroot /` Quasar client and static files are distributed as static on the nginx web server
   - `statics /` Quasar static files
     - `skins /` site themes
     - `PartialSkins /` partial site themes
-    - `index.html` client launch file
+    - `index.html` client launch file  
     ...
     - `config.js` file of the client config, it is recreated automatically when the server is restarted
     - `custom.js` file of custom scripts on the site, you can edit it through the admin panel
@@ -73,6 +73,6 @@ Obtained using the `build.sh` script with the default settings.
    - `SunEngine.json` project path settings and other project startup settings
    - `ServerInfo.json` server information to display on the information page in the admin panel
   
-- `Resources /` server resources
+- `Resources /` server resources  
      ...
 - `SunEngine.md` file defining the project root directory

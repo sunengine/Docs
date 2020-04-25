@@ -1,11 +1,11 @@
-### Инсталляция
+# Installation
 
-[Arguments_for_run ru_RU](/src/ru/installation/arguments_for_run_ru.html)
+[Arguments_for_run EN](/src/en/installation_en/arguments_for_run_en.html)
 
-[Deploy ru_RU](/src/ru/installation/deploy_ru.html)
+[Deploy EN](/src/en/installation_en/deploy_en.html)
 
-[Nginx_configuration ru_RU](/src/ru/installation/nginx_configuration_ru.html)
+[Nginx_configuration EN](/src/en/installation_en/nginx_configuration_en.html)
 
-[Prerequisites ru_RU](/src/ru/installation/prerequisites_ru.html)
+[Prerequisites EN](/src/en/installation_en/prerequisites_en.html)
 
-[Step_by_step_server_installation ru_RU](/src/ru/installation/step_by_step_server_installation_ru.html)
+[Step_by_step_server_installation EN](/src/en/installation_en/step_by_step_server_installation_en.html)
