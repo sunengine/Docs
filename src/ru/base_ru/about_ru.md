@@ -79,9 +79,9 @@
 
 ### Ссылки
 
-- GitHub - https://github.com/sunengine/SunEngine
-- Сайт - https://sunengine.site
-- Демо сайт - https://demo.sunengine.site
+- GitHub - [github.com/sunengine/SunEngine](https://github.com/sunengine/SunEngine)
+- Сайт - [sunengine.site](https://sunengine.site)
+- Демо сайт - [demo.sunengine.site](https://demo.sunengine.site)
 
 ### Контакты
 

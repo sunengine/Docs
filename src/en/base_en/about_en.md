@@ -64,9 +64,9 @@ The project based on modern front edge technologies:
 
 ### Links
 
-- GitHub - https://github.com/sunengine/SunEngine
-- Russian Site - https://sunengine.site
-- Demo site - https://demo.sunengine.site
+- GitHub - [github.com/sunengine/SunEngine](https://github.com/sunengine/SunEngine)
+- Russian Site - [sunengine.site](https://sunengine.site)
+- Demo site - [demo.sunengine.site](https://demo.sunengine.site)
 
 ### Contacts
 
