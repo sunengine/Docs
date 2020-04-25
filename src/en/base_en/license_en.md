@@ -1,4 +1,4 @@
-# SunEngine Licence
+# Licence
 ## SunEngine Licence
 **Version 1.2.2**  
   
