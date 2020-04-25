@@ -76,3 +76,14 @@
 
 - Сделано с любовью ❤
 - Качественный код и архитектура
+
+### Ссылки
+
+- GitHub - https://github.com/sunengine/SunEngine
+- Сайт - https://sunengine.site
+- Демо сайт - https://demo.sunengine.site
+
+### Контакты
+
+- Дмитрий Полянин telegram: [@Okeanij](https://t.me/Okeanij)
+- SunEngine telegram группа: [@SunEngine](https://t.me/SunEngine)
