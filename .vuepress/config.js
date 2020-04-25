@@ -18,6 +18,7 @@ module.exports = {
   dest: 'docs',
 
   themeConfig: {
+    logo: '/SunEngine.svg',
     locales: {
       '/': {
         // text for the language dropdown

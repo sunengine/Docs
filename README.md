@@ -25,27 +25,19 @@ footer: Copyright © Dmitrij Polyanin  |  Used SunEngine License
 - Administration through the admin panel
 - Ability to create and modify skins for the site, a choice of already done skins.
 
-
 ### Thoughtful and friendly interface
 
-A one-page application with a modern and beautiful interface.
-
-Works on personal computers, tablets, mobile phones.
-
-In the future, possibility to compile as a native application of Android, iOS, Windows and Linux.
-
+- A one-page application with a modern and beautiful interface.
+- Works on personal computers, tablets, mobile phones.
+- In the future, possibility to compile as a native application of Android, iOS, Windows and Linux.
 
 ###  Modern front edge technologies
 
-Asp.Net Core 3.1
-
-VueJs - SPA client part
-
-Quasar Framework - Material Design VueJs Sections
-
-PostgreSQL - database (in the future, other SQL db engines)
-
-Linq2db ORM - database access
+- Asp.Net Core 3.1
+- VueJs - SPA client part
+- Quasar Framework - Material Design VueJs Sections
+- PostgreSQL - database (in the future, other SQL db engines)
+- Linq2db ORM - database access
 
 ### Security
 
@@ -59,24 +51,18 @@ Linq2db ORM - database access
   - Captcha on critical areas
 - Defense mechanisms against many malicious attack types
 
-
 ### Hosting
 
 - Linux or Windows server
 - Bash scripts to install, build, deploy and update
 
-
 ### Additionally
 
-Made with love ❤
-
-Quality code and architecture
-
-Road map (Russian)
+- Made with love ❤
+- Quality code and architecture
 
 ### Contacts
 
-Dmitrij Polianin telegram: [@Okeanij](https://t.me/Okeanij)
-
-SunEngine telegram group: [@SunEngine](https://t.me/SunEngine)
+- Dmitrij Polianin telegram: [@Okeanij](https://t.me/Okeanij)
+- SunEngine telegram group: [@SunEngine](https://t.me/SunEngine)
 
