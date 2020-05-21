@@ -43,7 +43,7 @@ The project based on modern front edge technologies:
  - PostgreSQL - database (in the future, other SQL db engines)  
  - Linq2db ORM - database access  
  
-### High security
+### Security
  - Developed using latest technologies of privacy and security.  
  - An innovative authorization system based on three tokens to protect against interception of authorization data, from XSS and CSRF attacks.  
  - AES encryption to protect authorization tokens.  
