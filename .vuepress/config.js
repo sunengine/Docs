@@ -55,7 +55,7 @@ module.exports = {
               children: [
                 {
                   collapsable: false,
-                  sidebarDepth: 0,
+                  sidebarDepth: 2,
                   children: ['/src/en/']
                 },
                 {
@@ -189,7 +189,7 @@ module.exports = {
               children: [
                 {
                   collapsable: false,
-                  sidebarDepth: 0,
+                  sidebarDepth: 2,
                   children: ['/src/ru/']
                 },
                 {
