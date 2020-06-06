@@ -18,6 +18,7 @@ module.exports = {
   dest: 'docs',
 
   themeConfig: {
+    logo: '/SunEngine.svg',
     locales: {
       '/': {
         // text for the language dropdown
@@ -54,7 +55,7 @@ module.exports = {
               children: [
                 {
                   collapsable: false,
-                  sidebarDepth: 0,
+                  sidebarDepth: 2,
                   children: ['/src/en/']
                 },
                 {
@@ -188,7 +189,7 @@ module.exports = {
               children: [
                 {
                   collapsable: false,
-                  sidebarDepth: 0,
+                  sidebarDepth: 2,
                   children: ['/src/ru/']
                 },
                 {
@@ -226,7 +227,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Ручная инсталляция',
+              title: 'Ручная установка',
               collapsable: true,
               sidebarDepth: 2,
               children: [
